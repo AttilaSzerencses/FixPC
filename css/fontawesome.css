@@ -1,0 +1,90 @@
+/* GENERALT FAJL - ne szerkeszd kezzel! Forras: tools/build-fonts.py */
+/* Font Awesome 6.5.1 Free (CC BY 4.0 / SIL OFL 1.1), a hasznalt ikonokra subsetelve. */
+
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url(../assets/fonts/fa-solid-900.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Font Awesome 6 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(../assets/fonts/fa-brands-400.woff2) format("woff2");
+}
+
+.fas, .fab {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+}
+.fas { font-family: "Font Awesome 6 Free"; font-weight: 900; }
+.fab { font-family: "Font Awesome 6 Brands"; font-weight: 400; }
+
+.fa-xs { font-size: .75em; line-height: .0833333337em; vertical-align: .125em; }
+.fa-sm { font-size: .875em; line-height: .0714285718em; vertical-align: .0535714295em; }
+
+.fa-arrow-left::before { content: "\f060"; }
+.fa-arrow-up-right-dots::before { content: "\e4b7"; }
+.fa-bars::before { content: "\f0c9"; }
+.fa-battery-half::before { content: "\f242"; }
+.fa-briefcase::before { content: "\f0b1"; }
+.fa-broom::before { content: "\f51a"; }
+.fa-building::before { content: "\f1ad"; }
+.fa-building-user::before { content: "\e4da"; }
+.fa-cable-car::before { content: "\f7da"; }
+.fa-camera::before { content: "\f030"; }
+.fa-chevron-right::before { content: "\f054"; }
+.fa-circle-nodes::before { content: "\e4e2"; }
+.fa-clock::before { content: "\f017"; }
+.fa-comments::before { content: "\f086"; }
+.fa-compact-disc::before { content: "\f51f"; }
+.fa-desktop::before { content: "\f390"; }
+.fa-display::before { content: "\e163"; }
+.fa-download::before { content: "\f019"; }
+.fa-envelope::before { content: "\f0e0"; }
+.fa-envelope-circle-check::before { content: "\e4e8"; }
+.fa-ethernet::before { content: "\f796"; }
+.fa-exclamation-circle::before { content: "\f06a"; }
+.fa-gauge-high::before { content: "\f625"; }
+.fa-handshake::before { content: "\f2b5"; }
+.fa-hard-drive::before { content: "\f0a0"; }
+.fa-home::before { content: "\f015"; }
+.fa-house-signal::before { content: "\e012"; }
+.fa-info-circle::before { content: "\f05a"; }
+.fa-laptop::before { content: "\f109"; }
+.fa-lightbulb::before { content: "\f0eb"; }
+.fa-location-dot::before { content: "\f3c5"; }
+.fa-magnifying-glass::before { content: "\f002"; }
+.fa-map-pin::before { content: "\f276"; }
+.fa-memory::before { content: "\f538"; }
+.fa-microchip::before { content: "\f2db"; }
+.fa-network-wired::before { content: "\f6ff"; }
+.fa-phone::before { content: "\f095"; }
+.fa-plug::before { content: "\f1e6"; }
+.fa-print::before { content: "\f02f"; }
+.fa-robot::before { content: "\f544"; }
+.fa-rotate-left::before { content: "\f2ea"; }
+.fa-satellite-dish::before { content: "\f7c0"; }
+.fa-screwdriver-wrench::before { content: "\f7d9"; }
+.fa-server::before { content: "\f233"; }
+.fa-shield-halved::before { content: "\f3ed"; }
+.fa-shield-virus::before { content: "\e06c"; }
+.fa-signal::before { content: "\f012"; }
+.fa-temperature-half::before { content: "\f2c9"; }
+.fa-tower-broadcast::before { content: "\f519"; }
+.fa-tv::before { content: "\f26c"; }
+.fa-user-tie::before { content: "\f508"; }
+.fa-wifi::before { content: "\f1eb"; }
+.fa-wrench::before { content: "\f0ad"; }
+.fa-chromecast::before { content: "\f838"; }
+.fa-facebook-f::before { content: "\f39e"; }
+.fa-instagram::before { content: "\f16d"; }
+.fa-tiktok::before { content: "\e07b"; }

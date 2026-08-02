@@ -1,0 +1,131 @@
+/* FixPC - jogi/dokumentum aloldalak kozos stiluslapja */
+/* Hasznalja: privacy-policy(-en).html, terms(-en).html */
+:root {
+    --primary: #1a8fa0;
+    --accent: #4dd9ec;
+    --bg-dark: #0d1f2d;
+    --bg-darker: #081520;
+    --bg-card: #162b3a;
+    --text-light: #e8f4f8;
+    --text-muted: #7aabb8;
+    --border-color: rgba(26, 143, 160, 0.25);
+    --font-heading: 'Exo 2', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+body { background: var(--bg-dark); color: var(--text-light); font-family: var(--font-body); margin: 0; }
+nav {
+    background: rgba(8,21,32,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.8rem 0;
+}
+.navbar-brand img { height: 48px; }
+.back-btn {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s;
+}
+.back-btn:hover { color: var(--accent); }
+.doc-wrap {
+    max-width: 820px;
+    margin: 4rem auto 6rem;
+    padding: 0 1.5rem;
+}
+.doc-header {
+    margin-bottom: 2.5rem;
+}
+.doc-tag {
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 0.75rem;
+}
+h1 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 2.2rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+.doc-meta { color: var(--text-muted); font-size: 0.85rem; }
+h2 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: white;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+p, li { color: var(--text-muted); line-height: 1.8; font-size: 0.95rem; }
+ul { padding-left: 1.5rem; }
+li { margin-bottom: 0.4rem; }
+a { color: var(--accent); }
+.highlight-box {
+    background: rgba(26,143,160,0.08);
+    border: 1px solid rgba(26,143,160,0.2);
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem 0;
+}
+footer {
+    border-top: 1px solid var(--border-color);
+    padding: 1.5rem 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.82rem;
+}
+footer a { color: var(--text-muted); text-decoration: none; margin: 0 0.75rem; }
+footer a:hover { color: var(--accent); }
+
+/* ── Kitoltendo helyorzo – elesites elott mindnek el kell tunnie ── */
+.todo {
+    background: rgba(255, 176, 32, 0.13);
+    border: 1px dashed rgba(255, 176, 32, 0.55);
+    border-radius: 4px;
+    color: #ffc456;
+    font-weight: 600;
+    padding: 0.05rem 0.45rem;
+    font-size: 0.88em;
+}
+
+/* ── Nyelvvalto a jogi oldalakon ── */
+.doc-lang {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 0.2rem 0.45rem;
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+.doc-lang a {
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 0.15rem 0.35rem;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+.doc-lang a.active { background: var(--primary); color: #fff; }
+.doc-lang a:hover:not(.active) { color: var(--accent); }
+.doc-lang span { color: var(--border-color); }
+
+.nav-right { display: flex; align-items: center; gap: 1.25rem; }
+
+@media (max-width: 575px) {
+    .nav-right { gap: 0.7rem; }
+    .back-btn span { display: none; }
+}

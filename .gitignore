@@ -1,0 +1,13 @@
+# Claude Code / helyi eszközkonfiguráció - nem resze a weboldal projektnek
+.claude/
+
+# OS / szerkesztő szemet
+.DS_Store
+Thumbs.db
+desktop.ini
+nul
+NUL
+
+# Python (ha a tools/ szkripteket futtatod)
+__pycache__/
+*.pyc

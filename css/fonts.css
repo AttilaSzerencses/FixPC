@@ -1,0 +1,66 @@
+/* GENERALT FAJL - ne szerkeszd kezzel! Forras: tools/build-fonts.py */
+/* Exo 2 + Inter (SIL OFL 1.1), angol+magyar karakterkeszletre subsetelve. */
+
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../assets/fonts/Exo2-400.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../assets/fonts/Exo2-600.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../assets/fonts/Exo2-700.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(../assets/fonts/Exo2-800.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../assets/fonts/Inter-400.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../assets/fonts/Inter-500.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../assets/fonts/Inter-600.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../assets/fonts/Inter-700.woff2) format('woff2');
+}
