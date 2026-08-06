@@ -7,34 +7,44 @@
     <title>FixPC – IT Szolgáltatások | Szeged</title>
     <link rel="icon" type="image/png" href="assets/img/Logo.png" />
     <!-- Minden eszköz helyben tárolva – nincs külső CDN-kérés -->
+    <link rel="preload" href="assets/fonts/BigShoulders-800-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/BigShoulders-800-latinext.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/Archivo-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/Archivo-400-latinext.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="vendor/bootstrap.min.css" />
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/fontawesome.css" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body id="page-top">
+<!-- Refined-original direction: the site's original dark teal/cyan look, kept close to what was already working, with the AI-generic tells (animated grid background, generic template cards, overused default fonts) removed. Motion is intentionally minimal: a floating hero logo and standard hover feedback are the only animation. See DESIGN.md. -->
 
 <!-- ══════════════ NAVBAR ══════════════ -->
 <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
     <div class="container">
         <a class="navbar-brand" href="#page-top">
-            <img src="assets/img/logo-trimmed.png" alt="FixPC" />
+            <img src="assets/img/logo-trimmed.png" class="brand-mark" alt="" aria-hidden="true" />
+            <span class="brand-word">Fix<span class="pc">PC</span></span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navResp" aria-controls="navResp" aria-expanded="false" aria-label="Navigáció">
-            <i class="fas fa-bars"></i>
+            <i class="fas fa-bars" aria-hidden="true"></i>
         </button>
         <div class="collapse navbar-collapse" id="navResp">
             <ul class="navbar-nav ms-auto py-4 py-lg-0 align-items-lg-center">
+                <li class="nav-item"><a class="nav-link" href="#page-top">Főoldal</a></li>
                 <li class="nav-item"><a class="nav-link" href="#services">Fő profilunk</a></li>
                 <li class="nav-item"><a class="nav-link" href="#portfolio">Szolgáltatások</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">Rólunk</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Kapcsolat</a></li>
                 <li class="nav-item ms-lg-2">
                     <div class="lang-toggle">
-                        <a href="index.html" class="active">HU</a>
+                        <a href="index.html" class="active" aria-current="true">HU</a>
                         <span>|</span>
                         <a href="index-en.html">EN</a>
                     </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-cta" href="tel:+36302327113"><i class="fas fa-phone" aria-hidden="true"></i> +36 30 232 7113</a>
                 </li>
             </ul>
         </div>
@@ -43,46 +53,44 @@
 
 <!-- ══════════════ HERO ══════════════ -->
 <section id="hero">
-    <div class="hero-grid"></div>
-    <div class="hero-glow"></div>
-    <div class="hero-glow2"></div>
     <div class="container">
-        <div class="row align-items-center g-4">
+        <div class="row align-items-center g-4 g-lg-5">
 
-            <!-- Bal oldal: szöveg -->
-            <div class="col-lg-6 hero-content">
-                <h1 class="hero-title">
-                    <span class="hl">FixPC</span>
-                    <span class="hero-tagline">Informatikai megoldások cégeknek és magánszemélyeknek</span>
-                </h1>
-                <p class="hero-sub">
-                    Vállalati és magán hálózatok kiépítése, üzemeltetése. Számítógépek és
-                    informatikai eszközök szervizelése, karbantartása Szegeden és vonzáskörzetében.
-                </p>
-                <div>
-                    <a class="btn-main" href="#portfolio">Szolgáltatások</a>
-                    <a class="btn-out"  href="#contact">Kapcsolat</a>
-                </div>
-                <div class="hero-stats">
+            <div class="col-lg-7">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="hl">FixPC</span>
+                        <span class="hero-tagline">Informatikai megoldások cégeknek és magánszemélyeknek</span>
+                    </h1>
+
+                    <p class="hero-sub">
+                        Vállalati és magán hálózatok kiépítése, üzemeltetése. Számítógépek és
+                        informatikai eszközök szervizelése, karbantartása Szegeden és igény szerint országosan.
+                    </p>
                     <div>
-                        <div class="stat-num">2 500 <span style="font-size:1.1rem">Ft</span></div>
-                        <div class="stat-lbl">Kiszállási díj Szegeden</div>
+                        <a class="btn-main" href="#portfolio">Szolgáltatások</a>
+                        <a class="btn-out"  href="#contact">Kapcsolat</a>
                     </div>
-                    <div>
-                        <div class="stat-num">6</div>
-                        <div class="stat-lbl">Fő szolgáltatáscsoport</div>
-                    </div>
-                    <div>
-                        <div class="stat-num"><i class="fas fa-wifi" style="font-size:1.4rem"></i></div>
-                        <div class="stat-lbl">Távsegítség is elérhető</div>
+                    <div class="hero-stats">
+                        <div>
+                            <div class="stat-num">2 500 <span class="stat-unit">Ft</span></div>
+                            <div class="stat-lbl">Kiszállási díj Szegeden</div>
+                        </div>
+                        <div>
+                            <div class="stat-num">6</div>
+                            <div class="stat-lbl">Fő szolgáltatáscsoport</div>
+                        </div>
+                        <div>
+                            <div class="stat-num"><i class="fas fa-wifi stat-unit" aria-hidden="true"></i></div>
+                            <div class="stat-lbl">Távsegítség</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Jobb oldal: logo, több légterrel -->
-            <div class="col-lg-6 hero-logo-wrap">
-                <div class="hero-logo-halo"></div>
-                <img src="assets/img/logo-trimmed.png" alt="FixPC logo" class="hero-logo-img" />
+            <div class="col-lg-5 hero-logo-wrap">
+                <div class="hero-logo-halo" aria-hidden="true"></div>
+                <img src="assets/img/logo-trimmed.png" class="hero-logo-img" alt="FixPC" />
             </div>
 
         </div>
@@ -90,32 +98,31 @@
 </section>
 
 <!-- ══════════════ SERVICES (top 3) ══════════════ -->
-<section class="sec sec-dark" id="services">
+<section class="sec sec-paper" id="services">
     <div class="container">
         <div class="text-center mb-5 fade-in">
-            <span class="sec-tag">Mit kínálunk?</span>
             <h2 class="sec-title">Teljes körű informatikai megoldások</h2>
-            <p class="sec-sub">Mindent egy helyen, legyen szó egy számítógép vagy laptop szervizeléséről de akár egy teljes irodai hálózat kiépítéséről.</p>
+            <p class="sec-sub">Minden egy helyen, legyen szó akár egy számítógép, laptop szervizeléséről, vagy egy teljes irodai hálózat kiépítéséről.</p>
         </div>
-        <div class="row g-4">
+        <div class="row g-4 svc-grid">
             <div class="col-lg-4 fade-in">
                 <div class="svc-card">
-                    <div class="svc-icon"><i class="fas fa-building-user"></i></div>
-                    <h4>Vállalati informatikai megoldások hosszú távú együttműködéssel</h4>
+                    <div class="svc-icon"><i class="fas fa-building-user" aria-hidden="true"></i></div>
+                    <h3>Vállalati megoldások hosszútávú együttműködéssel</h3>
                     <p>Irodai hálózatok kiépítése, eszközök beüzemelése, VPN és egyéb hálózati megoldások. Szerződéses keretek között folyamatos támogatás és a cég igényeire szabott egyedi megoldások.</p>
                 </div>
             </div>
             <div class="col-lg-4 fade-in">
                 <div class="svc-card">
-                    <div class="svc-icon"><i class="fas fa-network-wired"></i></div>
-                    <h4>Hálózat és Okoseszközök</h4>
+                    <div class="svc-icon"><i class="fas fa-network-wired" aria-hidden="true"></i></div>
+                    <h3>Hálózat és Okoseszközök</h3>
                     <p>Router és modem beállítás, Wi-Fi optimalizálás, Mesh rendszerek, strukturált kábelezés, NAS, kamera rendszerek, okos otthon eszközök, TV és set-top box konfiguráció, és minden más, ami hálózattal kapcsolatos.</p>
                 </div>
             </div>
             <div class="col-lg-4 fade-in">
                 <div class="svc-card">
-                    <div class="svc-icon"><i class="fas fa-screwdriver-wrench"></i></div>
-                    <h4>Számítógép, Laptop, Hardver és Szoftver</h4>
+                    <div class="svc-icon"><i class="fas fa-screwdriver-wrench" aria-hidden="true"></i></div>
+                    <h3>Számítógép, Laptop, Hardver és Szoftver</h3>
                     <p>Számítógépek és laptopok hibakeresése, javítása, tisztítása, pasztázása, alkatrészcsere. Operációs rendszer telepítés, vírusírtás, szoftver konfiguráció.</p>
                 </div>
             </div>
@@ -124,19 +131,18 @@
 </section>
 
 <!-- ══════════════ PORTFOLIO / RÉSZLETES SZOLGÁLTATÁSOK ══════════════ -->
-<section class="sec sec-mid" id="portfolio">
+<section class="sec sec-deep" id="portfolio">
     <div class="container">
         <div class="text-center mb-5 fade-in">
-            <span class="sec-tag">Szolgáltatások</span>
             <h2 class="sec-title">Összes szolgáltatás</h2>
-            <p class="sec-sub">Kattints egy kártyára a részletes leírásért és az árakért.</p>
+            <p class="sec-sub">Kattints egy kártyára a további szolgáltatásokért</p>
         </div>
 
         <div class="rate-box fade-in">
             <div class="rate-main">
-                <i class="fas fa-clock"></i>
+                <i class="fas fa-clock" aria-hidden="true"></i>
                 <div>
-                    <div class="rate-lbl">Szakértői óradíj</div>
+                    <div class="rate-lbl">Alap óradíj</div>
                     <div class="rate-val">8 000 Ft / óra</div>
                 </div>
             </div>
@@ -147,196 +153,172 @@
             </p>
         </div>
 
-        <!-- Szűrőgombok -->
-        <div class="filter-bar">
-            <button class="filter-btn active" onclick="filterPortfolio('all',this)">Összes</button>
-            <button class="filter-btn" onclick="filterPortfolio('hardware',this)">Hardver és Laptop</button>
-            <button class="filter-btn" onclick="filterPortfolio('software',this)">Szoftver és Operációs rendszer</button>
-            <button class="filter-btn" onclick="filterPortfolio('network',this)">Hálózat</button>
-            <button class="filter-btn" onclick="filterPortfolio('smart',this)">Okoseszközök</button>
-            <button class="filter-btn" onclick="filterPortfolio('consulting',this)">Tanácsadás</button>
-            <button class="filter-btn" onclick="filterPortfolio('business',this)">Vállalati</button>
-        </div>
-
         <div class="row g-4" id="portfolio-grid">
 
             <!-- ── Kártya 6: Vállalati ── -->
-            <div class="col-lg-4 col-md-6 portfolio-item fade-in" data-category="business">
-                <div class="p-card" onclick="openModal('m6')">
+            <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+                <button type="button" class="p-card" data-bs-toggle="modal" data-bs-target="#m6">
                     <div class="p-card-head">
-                        <div class="p-card-icon"><i class="fas fa-building"></i></div>
+                        <div class="p-card-icon"><i class="fas fa-building" aria-hidden="true"></i></div>
                         <div>
-                            <h5>Vállalati informatikai megoldások</h5>
+                            <h3>Vállalati informatikai megoldások</h3>
                             <div class="cat">Vállalati</div>
                         </div>
                     </div>
                     <div class="p-card-body">
                         <ul>
-                            <li>Irodai hálózat kiépítése</li>
-                            <li>VPN és egyéb hálózati megoldások</li>
-                            <li>Gépek, eszközök beüzemelése</li>
-                            <li>Rendelkezésre állási szerződés</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Irodai hálózat kiépítése</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>VPN és egyéb hálózati megoldások</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Gépek, eszközök beüzemelése</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Rendelkezésre állási szerződés</li>
                         </ul>
                     </div>
                     <div class="p-card-foot">
-                        <a href="#" class="details-link" onclick="event.preventDefault(); openModal('m6')">
-                            Részletek <i class="fas fa-chevron-right fa-xs"></i>
-                        </a>
+                        <span class="details-link">Részletek <i class="fas fa-chevron-right fa-xs" aria-hidden="true"></i></span>
                     </div>
-                </div>
+                </button>
             </div>
 
             <!-- ── Kártya 1: Hardver szerviz ── -->
-            <div class="col-lg-4 col-md-6 portfolio-item fade-in" data-category="hardware">
-                <div class="p-card" onclick="openModal('m1')">
+            <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+                <button type="button" class="p-card" data-bs-toggle="modal" data-bs-target="#m1">
                     <div class="p-card-head">
-                        <div class="p-card-icon"><i class="fas fa-laptop"></i></div>
+                        <div class="p-card-icon"><i class="fas fa-laptop" aria-hidden="true"></i></div>
                         <div>
-                            <h5>Számítógép és Laptop szerviz</h5>
+                            <h3>Számítógép és Laptop szerviz</h3>
                             <div class="cat">Hardver</div>
                         </div>
                     </div>
                     <div class="p-card-body">
                         <ul>
-                            <li>Hibakeresés és javítás</li>
-                            <li>Optimalizálás, gyorsítás</li>
-                            <li>Akkumulátor csere</li>
-                            <li>Tisztítás, pasztázás</li>
-                            <li>Adatmentés, visszaállítás</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Hibakeresés és javítás</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Optimalizálás, gyorsítás</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Akkumulátor csere</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Tisztítás, pasztázás</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Adatmentés, visszaállítás</li>
                         </ul>
                     </div>
                     <div class="p-card-foot">
-                        <a href="#" class="details-link" onclick="event.preventDefault(); openModal('m1')">
-                            Részletek <i class="fas fa-chevron-right fa-xs"></i>
-                        </a>
+                        <span class="details-link">Részletek <i class="fas fa-chevron-right fa-xs" aria-hidden="true"></i></span>
                     </div>
-                </div>
+                </button>
             </div>
 
             <!-- ── Kártya 2: Szoftver és Operációs rendszer ── -->
-            <div class="col-lg-4 col-md-6 portfolio-item fade-in" data-category="software">
-                <div class="p-card" onclick="openModal('m2')">
+            <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+                <button type="button" class="p-card" data-bs-toggle="modal" data-bs-target="#m2">
                     <div class="p-card-head">
-                        <div class="p-card-icon"><i class="fas fa-desktop"></i></div>
+                        <div class="p-card-icon"><i class="fas fa-desktop" aria-hidden="true"></i></div>
                         <div>
-                            <h5>Szoftver és Operációs rendszer</h5>
+                            <h3>Szoftver és Operációs rendszer</h3>
                             <div class="cat">Szoftver</div>
                         </div>
                     </div>
                     <div class="p-card-body">
                         <ul>
-                            <li>Operációs rendszer telepítés és frissítés</li>
-                            <li>Szoftverek telepítése</li>
-                            <li>Vírusírtás, kártevők eltávolítása</li>
-                            <li>E-mail fiókok beállítása</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Operációs rendszer telepítés és frissítés</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Szoftverek telepítése</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Vírusírtás, kártevők eltávolítása</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>E-mail fiókok beállítása</li>
                         </ul>
                     </div>
                     <div class="p-card-foot">
-                        <a href="#" class="details-link" onclick="event.preventDefault(); openModal('m2')">
-                            Részletek <i class="fas fa-chevron-right fa-xs"></i>
-                        </a>
+                        <span class="details-link">Részletek <i class="fas fa-chevron-right fa-xs" aria-hidden="true"></i></span>
                     </div>
-                </div>
+                </button>
             </div>
 
             <!-- ── Kártya 3: Hálózat ── -->
-            <div class="col-lg-4 col-md-6 portfolio-item fade-in" data-category="network">
-                <div class="p-card" onclick="openModal('m3')">
+            <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+                <button type="button" class="p-card" data-bs-toggle="modal" data-bs-target="#m3">
                     <div class="p-card-head">
-                        <div class="p-card-icon"><i class="fas fa-wifi"></i></div>
+                        <div class="p-card-icon"><i class="fas fa-wifi" aria-hidden="true"></i></div>
                         <div>
-                            <h5>Hálózat beállítás</h5>
+                            <h3>Hálózat beállítás és tanácsadás</h3>
                             <div class="cat">Hálózat</div>
                         </div>
                     </div>
                     <div class="p-card-body">
                         <ul>
-                            <li>Router és modem konfiguráció</li>
-                            <li>Wi-Fi és LAN beállítás</li>
-                            <li>Mesh Wi-Fi rendszerek</li>
-                            <li>Kábelezés, kábel készítés</li>
-                            <li>NAS beüzemelés</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Router és modem konfiguráció</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Wi-Fi és LAN beállítás</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Mesh Wi-Fi rendszerek</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Kábelezés, kábel készítés</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>NAS beüzemelés</li>
                         </ul>
                     </div>
                     <div class="p-card-foot">
-                        <a href="#" class="details-link" onclick="event.preventDefault(); openModal('m3')">
-                            Részletek <i class="fas fa-chevron-right fa-xs"></i>
-                        </a>
+                        <span class="details-link">Részletek <i class="fas fa-chevron-right fa-xs" aria-hidden="true"></i></span>
                     </div>
-                </div>
+                </button>
             </div>
 
             <!-- ── Kártya 4: Okoseszközök ── -->
-            <div class="col-lg-4 col-md-6 portfolio-item fade-in" data-category="smart">
-                <div class="p-card" onclick="openModal('m4')">
+            <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+                <button type="button" class="p-card" data-bs-toggle="modal" data-bs-target="#m4">
                     <div class="p-card-head">
-                        <div class="p-card-icon"><i class="fas fa-house-signal"></i></div>
+                        <div class="p-card-icon"><i class="fas fa-house-signal" aria-hidden="true"></i></div>
                         <div>
-                            <h5>Okoseszközök és Műszaki beállítás</h5>
+                            <h3>Okoseszközök és Műszaki beállítás</h3>
                             <div class="cat">Okoseszközök</div>
                         </div>
                     </div>
                     <div class="p-card-body">
                         <ul>
-                            <li>Smart TV, Chromecast, Apple TV</li>
-                            <li>Okos izzók, konnektorok</li>
-                            <li>Robotporszívók beüzemelése</li>
-                            <li>Set-top box, hangeszköz</li>
-                            <li>CD/DVD digitalizálás</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Smart TV, Chromecast, Apple TV</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Okos izzók, konnektorok</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Robotporszívók beüzemelése</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Set-top box, hangeszköz</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>CD/DVD digitalizálás</li>
                         </ul>
                     </div>
                     <div class="p-card-foot">
-                        <a href="#" class="details-link" onclick="event.preventDefault(); openModal('m4')">
-                            Részletek <i class="fas fa-chevron-right fa-xs"></i>
-                        </a>
+                        <span class="details-link">Részletek <i class="fas fa-chevron-right fa-xs" aria-hidden="true"></i></span>
                     </div>
-                </div>
+                </button>
             </div>
 
             <!-- ── Kártya 5: Tanácsadás & Távsegítség ── -->
-            <div class="col-lg-4 col-md-6 portfolio-item fade-in" data-category="consulting">
-                <div class="p-card" onclick="openModal('m5')">
+            <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+                <button type="button" class="p-card" data-bs-toggle="modal" data-bs-target="#m5">
                     <div class="p-card-head">
-                        <div class="p-card-icon"><i class="fas fa-comments"></i></div>
+                        <div class="p-card-icon"><i class="fas fa-comments" aria-hidden="true"></i></div>
                         <div>
-                            <h5>Tanácsadás és Távsegítség</h5>
+                            <h3>Tanácsadás és Távsegítség</h3>
                             <div class="cat">Tanácsadás</div>
                         </div>
                     </div>
                     <div class="p-card-body">
                         <ul>
-                            <li>Hardver vásárlási tanácsok</li>
-                            <li>Kiegészítők kiválasztása</li>
-                            <li>Távsegítség (TeamViewer/AnyDesk)</li>
-                            <li>Használati tippek</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Hardver vásárlási tanácsok</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Kiegészítők kiválasztása</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Távsegítség (TeamViewer/AnyDesk)</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Használati tippek</li>
                         </ul>
                     </div>
                     <div class="p-card-foot">
-                        <a href="#" class="details-link" onclick="event.preventDefault(); openModal('m5')">
-                            Részletek <i class="fas fa-chevron-right fa-xs"></i>
-                        </a>
+                        <span class="details-link">Részletek <i class="fas fa-chevron-right fa-xs" aria-hidden="true"></i></span>
                     </div>
-                </div>
+                </button>
             </div>
 
         </div><!-- /portfolio-grid -->
     </div>
 </section>
 
-<!-- ══════════════ ABOUT ══════════════ -->
-<section class="sec sec-dark" id="about">
+<!-- ══════════════ ABOUT / GARANCIÁK ══════════════ -->
+<section class="sec sec-paper" id="about">
     <div class="container">
         <div class="row align-items-center g-5">
-            <div class="col-lg-5 fade-in">
-                <span class="sec-tag">Rólunk</span>
+            <div class="col-lg-5 fade-in about-copy">
                 <h2 class="sec-title">Megbízható informatikai partner vállalkozások és magánszemélyek számára</h2>
-                <p style="color:var(--txt-muted);line-height:1.8;margin-bottom:1.4rem">
+                <p>
                     A FixPC vállalkozások és magánszemélyek részére nyújt megbízható informatikai
-                    szolgáltatásokat. Elsősorban helyszíni kiszállással dolgozunk, így a problémák
+                    megoldásokat. Elsősorban helyszíni kiszállással dolgozunk, így a problémák
                     gyorsan és hatékonyan orvosolhatók. Eszközjavítás esetén az átvétel előre
                     egyeztetett időpontban történik.
                 </p>
-                <p style="color:var(--txt-muted);line-height:1.8">
+                <p>
                     Tapasztalatunk kiterjed vállalati irodai hálózatok kiépítésére, egyedi informatikai
                     megoldások kialakítására, rendszerek üzemeltetésére és szervizelésére. Legyen szó
                     kisebb vagy összetettebb feladatról, ügyfeleink számára személyre szabott megoldásokat
@@ -347,37 +329,37 @@
                 <div class="row g-3">
                     <div class="col-sm-6">
                         <div class="about-card">
-                            <div class="about-icon"><i class="fas fa-user-tie"></i></div>
+                            <div class="check-badge"><i class="fas fa-handshake" aria-hidden="true"></i></div>
                             <div>
-                                <h6>Személyes kiszolgálás</h6>
-                                <p>Egyeztetett időpontban helyszíni kiszállás vagy az eszköz átvétele.</p>
+                                <h3>Vállalati partnerség</h3>
+                                <p>Hosszú távú rendelkezésre állási és üzemeltetési szerződések cégeknek.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="about-card">
-                            <div class="about-icon"><i class="fas fa-location-dot"></i></div>
+                            <div class="check-badge"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
                             <div>
-                                <h6>Helyszíni kiszállás</h6>
-                                <p>Szegeden belül 2500 Ft a kiszállási díj, más település esetén egyeztetés szükséges.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="about-card">
-                            <div class="about-icon"><i class="fas fa-shield-halved"></i></div>
-                            <div>
-                                <h6>Átlátható árazás</h6>
+                                <h3>Átlátható árazás</h3>
                                 <p>Nincs rejtett díj, minden munka az egyeztetett feltételek szerint zajlik.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="about-card">
-                            <div class="about-icon"><i class="fas fa-handshake"></i></div>
+                            <div class="check-badge"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
                             <div>
-                                <h6>Vállalati partnerség</h6>
-                                <p>Hosszú távú rendelkezésre állási és üzemeltetési szerződések cégeknek.</p>
+                                <h3>Személyes kiszolgálás</h3>
+                                <p>Egyeztetett időpontban helyszíni kiszállás vagy az eszköz átvétele.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="about-card">
+                            <div class="check-badge"><i class="fas fa-location-dot" aria-hidden="true"></i></div>
+                            <div>
+                                <h3>Helyszíni kiszállás</h3>
+                                <p>Szegeden belül 2500 Ft a kiszállási díj, más település esetén egyeztetés szükséges.</p>
                             </div>
                         </div>
                     </div>
@@ -388,13 +370,13 @@
 </section>
 
 <!-- ══════════════ CONTACT ══════════════ -->
-<section class="sec" id="contact" style="background:var(--bg-dark)">
+<section class="sec sec-night" id="contact">
     <div class="container">
         <div class="text-center mb-5 fade-in">
-            <span class="sec-tag">Kapcsolat</span>
             <h2 class="sec-title">Lépj kapcsolatba!</h2>
             <p class="sec-sub">Keress minket bátran e-mailben, telefonon vagy social media felületeink egyikén. Igyekszünk minél hamarabb válaszolni.</p>
         </div>
+
         <div class="contact-wrap fade-in">
             <div class="row g-0">
                 <!-- Bal panel -->
@@ -404,43 +386,50 @@
                         <p class="c-sub">Informatikai szolgáltatások</p>
 
                         <div class="c-item">
-                            <div class="c-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="c-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
                             <div>
                                 <div class="c-lbl">E-mail</div>
                                 <div class="c-val"><a href="mailto:fixpchungary@gmail.com">fixpchungary@gmail.com</a></div>
                             </div>
                         </div>
                         <div class="c-item">
-                            <div class="c-icon"><i class="fas fa-phone"></i></div>
+                            <div class="c-icon"><i class="fas fa-phone" aria-hidden="true"></i></div>
                             <div>
                                 <div class="c-lbl">Telefon</div>
                                 <div class="c-val"><a href="tel:+36302327113">+36 30 232 7113</a></div>
                             </div>
                         </div>
                         <div class="c-item">
-                            <div class="c-icon"><i class="fas fa-location-dot"></i></div>
+                            <div class="c-icon"><i class="fas fa-map-pin" aria-hidden="true"></i></div>
                             <div>
-                                <div class="c-lbl">Helyszíni kiszállás</div>
-                                <div class="c-val">Szeged 2500 Ft, más település esetén egyeztetés szerint</div>
+                                <div class="c-lbl">Cím</div>
+                                <div class="c-val">6721 Szeged, Bocskai utca 5.</div>
                             </div>
                         </div>
                         <div class="c-item">
-                            <div class="c-icon"><i class="fas fa-clock"></i></div>
+                            <div class="c-icon"><i class="fas fa-location-dot" aria-hidden="true"></i></div>
+                            <div>
+                                <div class="c-lbl">Helyszíni kiszállás</div>
+                                <div class="c-val">Szegeden 2500 Ft, más település esetén egyeztetés szerint</div>
+                            </div>
+                        </div>
+                        <div class="c-item">
+                            <div class="c-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
                             <div>
                                 <div class="c-lbl">Elérhetőség</div>
-                                <div class="c-val">Hétköznap és hétvégén, egyeztetés alapján.</div>
+                                <div class="c-val">Hétköznap és hétvégén, egyeztetés alapján</div>
                             </div>
                         </div>
 
                         <div class="social-row">
-                            <a href="https://www.facebook.com/FixPCSzeged/" target="_blank" rel="noopener" class="soc-btn" title="Facebook">
-                                <i class="fab fa-facebook-f"></i>
+                            <a href="https://www.facebook.com/FixPCSzeged/" target="_blank" rel="noopener" class="soc-btn" title="Facebook" aria-label="FixPC Facebook oldala">
+                                <i class="fab fa-facebook-f" aria-hidden="true"></i>
                             </a>
-                            <a href="https://www.instagram.com/fixpchungary" target="_blank" rel="noopener" class="soc-btn" title="Instagram">
-                                <i class="fab fa-instagram"></i>
+                            <a href="https://www.instagram.com/fixpchungary" target="_blank" rel="noopener" class="soc-btn" title="Instagram" aria-label="FixPC Instagram oldala">
+                                <i class="fab fa-instagram" aria-hidden="true"></i>
                             </a>
-                            <a href="https://www.tiktok.com/@fixpchungary" target="_blank" rel="noopener" class="soc-btn" title="TikTok">
-                                <i class="fab fa-tiktok"></i>
+                            <a href="https://www.tiktok.com/@fixpchungary" target="_blank" rel="noopener" class="soc-btn" title="TikTok" aria-label="FixPC TikTok oldala">
+                                <i class="fab fa-tiktok" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -449,6 +438,9 @@
                 <div class="col-lg-7">
                     <div class="c-panel-right c-panel-map h-100">
                         <div class="map-wrap">
+                            <button type="button" class="map-wake" data-map-wake aria-label="Térkép aktiválása görgetéshez">
+                                <i class="fas fa-location-dot" aria-hidden="true"></i>
+                            </button>
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2758.6304571776454!2d20.14565387673573!3d46.25757378015459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4744880cb0ceeddf%3A0xbdc6b4c98947dcdf!2sSzeged%2C%20Bocskai%20u.%205%2C%206721!5e0!3m2!1shu!2shu!4v1785677727695!5m2!1shu!2shu"
                                 title="FixPC, 6721 Szeged, Bocskai utca 5. térkép"
@@ -468,7 +460,10 @@
     <div class="container">
         <div class="row align-items-center g-3">
             <div class="col-md-3 foot-logo">
-                <a href="index.html"><img src="assets/img/logo-trimmed.png" alt="FixPC" /></a>
+                <a href="index.html" class="foot-logo">
+                    <img src="assets/img/logo-trimmed.png" alt="" aria-hidden="true" />
+                    <span class="brand-word">Fix<span class="pc">PC</span></span>
+                </a>
             </div>
             <div class="col-md-6 text-center">
                 <div class="foot-links justify-content-center d-flex flex-wrap gap-3">
@@ -483,255 +478,276 @@
     </div>
 </footer>
 
+<!-- Mobil hívógomb -->
+<a class="tap-call" href="tel:+36302327113" aria-label="Hívás: +36 30 232 7113">
+    <i class="fas fa-phone" aria-hidden="true"></i>
+</a>
+
 <!-- ══════════════ MODALS ══════════════ -->
 
 <!-- M1: Számítógép & Laptop szerviz -->
-<div class="modal fade portfolio-modal" id="m1" tabindex="-1" aria-hidden="true">
+<div class="modal fade portfolio-modal" id="m1" tabindex="-1" aria-hidden="true" aria-labelledby="m1Title">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <div style="display:flex;align-items:center;gap:.9rem">
-                    <div class="p-card-icon"><i class="fas fa-laptop"></i></div>
-                    <h5 class="modal-title">Számítógép és Laptop szerviz</h5>
+                    <div class="p-card-icon"><i class="fas fa-laptop" aria-hidden="true"></i></div>
+                    <h2 class="modal-title" id="m1Title">Számítógép és Laptop szerviz</h2>
                 </div>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezárás"></button>
             </div>
             <div class="modal-body">
                 <p class="modal-intro">Teljes körű hardver szerviz számítógépekhez és laptopokhoz.</p>
+                <div class="svc-group-label">Hibaelhárítás</div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-magnifying-glass"></i>Hibakeresés és diagnosztika</div>
+                    <div class="svc-line-name"><i class="fas fa-magnifying-glass" aria-hidden="true"></i>Hibakeresés és diagnosztika</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-wrench"></i>Javítás</div>
+                    <div class="svc-line-name"><i class="fas fa-wrench" aria-hidden="true"></i>Javítás</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-gauge-high"></i>Számítógép / laptop optimalizálása, gyorsítása</div>
+                    <div class="svc-line-name"><i class="fas fa-gauge-high" aria-hidden="true"></i>Számítógép / laptop optimalizálása, gyorsítása</div>
+                </div>
+                <div class="svc-group-label">Karbantartás</div>
+                <div class="svc-line">
+                    <div class="svc-line-name"><i class="fas fa-battery-half" aria-hidden="true"></i>Laptop akkumulátor csere</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-battery-half"></i>Laptop akkumulátor csere</div>
+                    <div class="svc-line-name"><i class="fas fa-microchip" aria-hidden="true"></i>Hardver csere / bővítés (RAM, SSD stb.)</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-microchip"></i>Hardver csere / bővítés (RAM, SSD stb.)</div>
+                    <div class="svc-line-name"><i class="fas fa-broom" aria-hidden="true"></i>Belső tisztítás (por eltávolítás)</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-broom"></i>Belső tisztítás (por eltávolítás)</div>
+                    <div class="svc-line-name"><i class="fas fa-temperature-half" aria-hidden="true"></i>Termikus paszta csere (pasztázás)</div>
+                </div>
+                <div class="svc-group-label">Adatmentés</div>
+                <div class="svc-line">
+                    <div class="svc-line-name"><i class="fas fa-hard-drive" aria-hidden="true"></i>Adatmentés (meglévő meghajtóról)</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-temperature-half"></i>Termikus paszta csere (pasztázás)</div>
-                </div>
-                <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-hard-drive"></i>Adatmentés (meglévő meghajtóról)</div>
-                </div>
-                <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-rotate-left"></i>Adatvisszaállítás (törölt / sérült)</div>
+                    <div class="svc-line-name"><i class="fas fa-rotate-left" aria-hidden="true"></i>Adatvisszaállítás (törölt / sérült)</div>
                 </div>
                 <div class="modal-callout">
-                    <i class="fas fa-info-circle me-1"></i>
-                    <strong>Kiszállás Szegeden belül: 2 500 Ft.</strong> Szakértői óradíj: 8 000 Ft / óra, az alkatrészek ára ezen felül értendő. A pontos árról a hiba felmérése után, a munka megkezdése előtt egyeztetünk.
+                    <i class="fas fa-info-circle me-1" aria-hidden="true"></i>
+                    <strong>Kiszállás Szegeden belül: 2 500 Ft.</strong> Alap óradíj: 8 000 Ft / óra, az alkatrészek ára ezen felül értendő. A pontos árról a hiba felmérése után, a munka megkezdése előtt egyeztetünk.
                 </div>
+                <a class="modal-contact-cta" href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i>Kapcsolatfelvétel</a>
             </div>
         </div>
     </div>
 </div>
 
 <!-- M2: Szoftver és Operációs rendszer -->
-<div class="modal fade portfolio-modal" id="m2" tabindex="-1" aria-hidden="true">
+<div class="modal fade portfolio-modal" id="m2" tabindex="-1" aria-hidden="true" aria-labelledby="m2Title">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <div style="display:flex;align-items:center;gap:.9rem">
-                    <div class="p-card-icon"><i class="fas fa-desktop"></i></div>
-                    <h5 class="modal-title">Szoftver és Operációs rendszer</h5>
+                    <div class="p-card-icon"><i class="fas fa-desktop" aria-hidden="true"></i></div>
+                    <h2 class="modal-title" id="m2Title">Szoftver és Operációs rendszer</h2>
                 </div>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezárás"></button>
             </div>
             <div class="modal-body">
                 <p class="modal-intro">Szoftver telepítéstől a vírusírtáson át az e-mail beállításig minden, Windows és Linux rendszereken egyaránt.</p>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-download"></i>Operációs rendszer telepítés (Windows / Linux)</div>
+                    <div class="svc-line-name"><i class="fas fa-download" aria-hidden="true"></i>Operációs rendszer telepítés (Windows / Linux)</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-arrow-up-right-dots"></i>Operációs rendszer frissítés, migráció</div>
+                    <div class="svc-line-name"><i class="fas fa-arrow-up-right-dots" aria-hidden="true"></i>Operációs rendszer frissítés, migráció</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-compact-disc"></i>Szoftverek telepítése és beállítása (Office, böngésző stb.)</div>
+                    <div class="svc-line-name"><i class="fas fa-compact-disc" aria-hidden="true"></i>Szoftverek telepítése és beállítása (Office, böngésző stb.)</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-shield-virus"></i>Vírusírtás, kártevők teljes eltávolítása</div>
+                    <div class="svc-line-name"><i class="fas fa-shield-virus" aria-hidden="true"></i>Vírusírtás, kártevők teljes eltávolítása</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-envelope-circle-check"></i>E-mail fiók beállítása (Outlook, Gmail, IMAP/POP)</div>
+                    <div class="svc-line-name"><i class="fas fa-envelope-circle-check" aria-hidden="true"></i>E-mail fiók beállítása (Outlook, Gmail, IMAP/POP)</div>
                 </div>
                 <div class="modal-callout">
-                    <i class="fas fa-info-circle me-1"></i>
-                    <strong>Kiszállás Szegeden belül: 2 500 Ft.</strong> Szakértői óradíj: 8 000 Ft / óra, az alkatrészek ára ezen felül értendő. A pontos árról a hiba felmérése után, a munka megkezdése előtt egyeztetünk.
+                    <i class="fas fa-info-circle me-1" aria-hidden="true"></i>
+                    <strong>Kiszállás Szegeden belül: 2 500 Ft.</strong> Alap óradíj: 8 000 Ft / óra, az alkatrészek ára ezen felül értendő. A pontos árról a hiba felmérése után, a munka megkezdése előtt egyeztetünk.
                 </div>
+                <a class="modal-contact-cta" href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i>Kapcsolatfelvétel</a>
             </div>
         </div>
     </div>
 </div>
 
 <!-- M3: Hálózat -->
-<div class="modal fade portfolio-modal" id="m3" tabindex="-1" aria-hidden="true">
+<div class="modal fade portfolio-modal" id="m3" tabindex="-1" aria-hidden="true" aria-labelledby="m3Title">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <div style="display:flex;align-items:center;gap:.9rem">
-                    <div class="p-card-icon"><i class="fas fa-wifi"></i></div>
-                    <h5 class="modal-title">Hálózat beállítás és tanácsadás</h5>
+                    <div class="p-card-icon"><i class="fas fa-wifi" aria-hidden="true"></i></div>
+                    <h2 class="modal-title" id="m3Title">Hálózat beállítás és tanácsadás</h2>
                 </div>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezárás"></button>
             </div>
             <div class="modal-body">
                 <p class="modal-intro">Otthoni és irodai hálózatok tervezése, kiépítése és konfigurálása, az egyszerű router beállítástól a komplex Mesh rendszerig.</p>
+                <div class="svc-group-label">Wi-Fi és lefedettség</div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-tower-broadcast"></i>Router / modem konfiguráció</div>
+                    <div class="svc-line-name"><i class="fas fa-tower-broadcast" aria-hidden="true"></i>Router / modem konfiguráció</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-wifi"></i>Wi-Fi optimalizálás, csatorna beállítás</div>
+                    <div class="svc-line-name"><i class="fas fa-wifi" aria-hidden="true"></i>Wi-Fi optimalizálás, csatorna beállítás</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-ethernet"></i>LAN hálózat kiépítése</div>
+                    <div class="svc-line-name"><i class="fas fa-circle-nodes" aria-hidden="true"></i>Mesh Wi-Fi rendszer beüzemelése</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-circle-nodes"></i>Mesh Wi-Fi rendszer beüzemelése</div>
+                    <div class="svc-line-name"><i class="fas fa-signal" aria-hidden="true"></i>Wi-Fi hatótáv növelése (repeater, access point)</div>
+                </div>
+                <div class="svc-group-label">Vezetékes hálózat</div>
+                <div class="svc-line">
+                    <div class="svc-line-name"><i class="fas fa-ethernet" aria-hidden="true"></i>LAN hálózat kiépítése</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-signal"></i>Wi-Fi hatótáv növelése (repeater, access point)</div>
+                    <div class="svc-line-name"><i class="fas fa-cable-car" aria-hidden="true"></i>Kábelezés, UTP kábel készítés, elvezetés</div>
+                </div>
+                <div class="svc-group-label">Csatlakoztatott eszközök</div>
+                <div class="svc-line">
+                    <div class="svc-line-name"><i class="fas fa-plug" aria-hidden="true"></i>Nyomtató / okoseszköz hálózatra csatlakoztatása</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-plug"></i>Nyomtató / okoseszköz hálózatra csatlakoztatása</div>
+                    <div class="svc-line-name"><i class="fas fa-camera" aria-hidden="true"></i>Kamera rendszerhez hálózati beállítások</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-cable-car"></i>Kábelezés, UTP kábel készítés, elvezetés</div>
-                </div>
-                <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-camera"></i>Kamera rendszerhez hálózati beállítások</div>
-                </div>
-                <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-server"></i>NAS beüzemelés</div>
+                    <div class="svc-line-name"><i class="fas fa-server" aria-hidden="true"></i>NAS beüzemelés</div>
                 </div>
                 <div class="modal-callout">
-                    <i class="fas fa-info-circle me-1"></i>
-                    <strong>Kiszállás Szegeden belül: 2 500 Ft.</strong> Szakértői óradíj: 8 000 Ft / óra, az alkatrészek ára ezen felül értendő. A pontos árról a hiba felmérése után, a munka megkezdése előtt egyeztetünk. Összetettebb hálózati projekteknél egyedi árajánlatot adunk.
+                    <i class="fas fa-info-circle me-1" aria-hidden="true"></i>
+                    <strong>Kiszállás Szegeden belül: 2 500 Ft.</strong> Alap óradíj: 8 000 Ft / óra, az alkatrészek ára ezen felül értendő. A pontos árról a hiba felmérése után, a munka megkezdése előtt egyeztetünk. Összetettebb hálózati projekteknél egyedi árajánlatot adunk.
                 </div>
+                <a class="modal-contact-cta" href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i>Kapcsolatfelvétel</a>
             </div>
         </div>
     </div>
 </div>
 
 <!-- M4: Okoseszközök -->
-<div class="modal fade portfolio-modal" id="m4" tabindex="-1" aria-hidden="true">
+<div class="modal fade portfolio-modal" id="m4" tabindex="-1" aria-hidden="true" aria-labelledby="m4Title">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <div style="display:flex;align-items:center;gap:.9rem">
-                    <div class="p-card-icon"><i class="fas fa-house-signal"></i></div>
-                    <h5 class="modal-title">Okoseszközök és Műszaki beállítások</h5>
+                    <div class="p-card-icon"><i class="fas fa-house-signal" aria-hidden="true"></i></div>
+                    <h2 class="modal-title" id="m4Title">Okoseszközök és Műszaki beállítások</h2>
                 </div>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezárás"></button>
             </div>
             <div class="modal-body">
                 <p class="modal-intro">Modern okoseszközök beüzemelése és konfigurálása, hogy minden a helyén legyen.</p>
+                <div class="svc-group-label">Szórakoztató elektronika</div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-tv"></i>TV / Smart TV bekonfigurálás, alkalmazások beállítása</div>
+                    <div class="svc-line-name"><i class="fas fa-tv" aria-hidden="true"></i>TV / Smart TV bekonfigurálás, alkalmazások beállítása</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-satellite-dish"></i>Set-top box, hangeszköz beállítás</div>
+                    <div class="svc-line-name"><i class="fas fa-satellite-dish" aria-hidden="true"></i>Set-top box, hangeszköz beállítás</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fab fa-chromecast" style="font-size:.82rem"></i>Chromecast / Apple TV / Android TV beállítás</div>
+                    <div class="svc-line-name"><i class="fab fa-chromecast" style="font-size:.82rem" aria-hidden="true"></i>Chromecast / Apple TV / Android TV beállítás</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-lightbulb"></i>Okos izzók, okos konnektorok beüzemelése</div>
+                    <div class="svc-line-name"><i class="fas fa-compact-disc" aria-hidden="true"></i>CD / DVD digitalizálás</div>
+                </div>
+                <div class="svc-group-label">Okosotthon</div>
+                <div class="svc-line">
+                    <div class="svc-line-name"><i class="fas fa-lightbulb" aria-hidden="true"></i>Okos izzók, okos konnektorok beüzemelése</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-robot"></i>Robotporszívó beüzemelése, térképezése</div>
+                    <div class="svc-line-name"><i class="fas fa-robot" aria-hidden="true"></i>Robotporszívó beüzemelése, térképezése</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-home"></i>Egyéb okoseszközök konfigurálása</div>
-                </div>
-                <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-compact-disc"></i>CD / DVD digitalizálás</div>
+                    <div class="svc-line-name"><i class="fas fa-home" aria-hidden="true"></i>Egyéb okoseszközök konfigurálása</div>
                 </div>
                 <div class="modal-callout">
-                    <i class="fas fa-info-circle me-1"></i>
-                    <strong>Kiszállás Szegeden belül: 2 500 Ft.</strong> Szakértői óradíj: 8 000 Ft / óra, az alkatrészek ára ezen felül értendő. A pontos árról a hiba felmérése után, a munka megkezdése előtt egyeztetünk.
+                    <i class="fas fa-info-circle me-1" aria-hidden="true"></i>
+                    <strong>Kiszállás Szegeden belül: 2 500 Ft.</strong> Alap óradíj: 8 000 Ft / óra, az alkatrészek ára ezen felül értendő. A pontos árról a hiba felmérése után, a munka megkezdése előtt egyeztetünk.
                 </div>
+                <a class="modal-contact-cta" href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i>Kapcsolatfelvétel</a>
             </div>
         </div>
     </div>
 </div>
 
 <!-- M5: Tanácsadás & Távsegítség -->
-<div class="modal fade portfolio-modal" id="m5" tabindex="-1" aria-hidden="true">
+<div class="modal fade portfolio-modal" id="m5" tabindex="-1" aria-hidden="true" aria-labelledby="m5Title">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <div style="display:flex;align-items:center;gap:.9rem">
-                    <div class="p-card-icon"><i class="fas fa-comments"></i></div>
-                    <h5 class="modal-title">Tanácsadás és Távsegítség</h5>
+                    <div class="p-card-icon"><i class="fas fa-comments" aria-hidden="true"></i></div>
+                    <h2 class="modal-title" id="m5Title">Tanácsadás és Távsegítség</h2>
                 </div>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezárás"></button>
             </div>
             <div class="modal-body">
-                <p class="modal-intro">Vásárlás előtt állsz? Nem tudod mi a jobb választás? Segítünk megtalálni a számodra ideális megoldást.</p>
+                <p class="modal-intro">Vásárlás előtt állsz? Segítségre van szükséged? Szívesen segítünk megtalálni a számodra ideális megoldást.</p>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-laptop"></i>Számítógép / laptop vásárlási tanácsadás</div>
+                    <div class="svc-line-name"><i class="fas fa-laptop" aria-hidden="true"></i>Számítógép / laptop vásárlási tanácsadás</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-memory"></i>Hardver / kiegészítő kiválasztása (RAM, SSD, monitor stb.)</div>
+                    <div class="svc-line-name"><i class="fas fa-memory" aria-hidden="true"></i>Hardver / kiegészítő kiválasztása (RAM, SSD, monitor stb.)</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-lightbulb"></i>Általános informatikai tippek, optimalizálás</div>
+                    <div class="svc-line-name"><i class="fas fa-lightbulb" aria-hidden="true"></i>Általános informatikai tippek, optimalizálás</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-display"></i>Távsegítség TeamViewer / AnyDesk segítségével</div>
+                    <div class="svc-line-name"><i class="fas fa-display" aria-hidden="true"></i>Távsegítség TeamViewer / AnyDesk segítségével</div>
                 </div>
-                <div class="modal-callout">
-                    <i class="fas fa-exclamation-circle me-1"></i>
+                <div class="modal-callout is-warning">
+                    <div class="callout-flag"><i class="fas fa-exclamation-circle" aria-hidden="true"></i>Figyelem</div>
                     <strong>Távsegítség:</strong> Meglévő ügyfelek részére, vagy előzetes konzultáció után érhető el. Új ügyfeleknek először személyes vagy telefonos egyeztetést javaslunk.
                 </div>
+                <a class="modal-contact-cta" href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i>Kapcsolatfelvétel</a>
             </div>
         </div>
     </div>
 </div>
 
 <!-- M6: Vállalati -->
-<div class="modal fade portfolio-modal" id="m6" tabindex="-1" aria-hidden="true">
+<div class="modal fade portfolio-modal" id="m6" tabindex="-1" aria-hidden="true" aria-labelledby="m6Title">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <div style="display:flex;align-items:center;gap:.9rem">
-                    <div class="p-card-icon"><i class="fas fa-building"></i></div>
-                    <h5 class="modal-title">Vállalati informatikai megoldások</h5>
+                    <div class="p-card-icon"><i class="fas fa-building" aria-hidden="true"></i></div>
+                    <h2 class="modal-title" id="m6Title">Vállalati informatikai megoldások</h2>
                 </div>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezárás"></button>
             </div>
             <div class="modal-body">
                 <p class="modal-intro">Komplex vállalati informatikai megoldásokat biztosítunk a tervezéstől a kivitelezésig. Szolgáltatásaink közé tartozik irodai hálózatok kiépítése, VPN-hozzáférések kialakítása, valamint informatikai eszközök üzembe helyezése.</p>
+                <div class="svc-group-label">Hálózat és eszközök</div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-network-wired"></i>Irodai / ipari hálózat kiépítése</div>
+                    <div class="svc-line-name"><i class="fas fa-network-wired" aria-hidden="true"></i>Irodai / ipari hálózat kiépítése</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-shield-halved"></i>VPN kiépítés és konfigurálás</div>
+                    <div class="svc-line-name"><i class="fas fa-shield-halved" aria-hidden="true"></i>VPN kiépítés és konfigurálás</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-desktop"></i>Számítógépek, munkaállomások beüzemelése</div>
+                    <div class="svc-line-name"><i class="fas fa-desktop" aria-hidden="true"></i>Számítógépek, munkaállomások beüzemelése</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-print"></i>Nyomtatók, multifunkciós eszközök beállítása</div>
+                    <div class="svc-line-name"><i class="fas fa-print" aria-hidden="true"></i>Nyomtatók, multifunkciós eszközök beállítása</div>
+                </div>
+                <div class="svc-group-label">Szoftver és üzemeltetés</div>
+                <div class="svc-line">
+                    <div class="svc-line-name"><i class="fas fa-compact-disc" aria-hidden="true"></i>Szoftverek telepítése, licenckezelés</div>
                 </div>
                 <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-compact-disc"></i>Szoftverek telepítése, licenckezelés</div>
-                </div>
-                <div class="svc-line">
-                    <div class="svc-line-name"><i class="fas fa-handshake"></i>Rendelkezésre állási szerződés (havi karbantartás)</div>
+                    <div class="svc-line-name"><i class="fas fa-handshake" aria-hidden="true"></i>Rendelkezésre állási szerződés (havi karbantartás)</div>
                 </div>
                 <div class="modal-callout">
-                    <i class="fas fa-briefcase me-1"></i>
+                    <i class="fas fa-briefcase me-1" aria-hidden="true"></i>
                     Vállalati megrendeléseknél minden esetben <strong>személyes konzultáció</strong> után készítünk részletes, egyedi árajánlatot. Vedd fel velünk a kapcsolatot!
                 </div>
+                <a class="modal-contact-cta" href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i>Kapcsolatfelvétel</a>
             </div>
         </div>
     </div>

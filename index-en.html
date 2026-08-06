@@ -7,22 +7,29 @@
     <title>FixPC – IT Services | Szeged</title>
     <link rel="icon" type="image/png" href="assets/img/Logo.png" />
     <!-- All assets served locally – no external CDN requests -->
+    <link rel="preload" href="assets/fonts/BigShoulders-800-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/Archivo-400-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="vendor/bootstrap.min.css" />
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/fontawesome.css" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body id="page-top">
+<!-- Refined-original direction: the site's original dark teal/cyan look, kept close to what was already working, with the AI-generic tells (animated grid background, generic template cards, overused default fonts) removed. Motion is intentionally minimal: a floating hero logo and standard hover feedback are the only animation. See DESIGN.md. -->
 
 <!-- ══════════════ NAVBAR ══════════════ -->
 <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand" href="#page-top"><img src="assets/img/logo-trimmed.png" alt="FixPC" /></a>
+        <a class="navbar-brand" href="#page-top">
+            <img src="assets/img/logo-trimmed.png" class="brand-mark" alt="" aria-hidden="true" />
+            <span class="brand-word">Fix<span class="pc">PC</span></span>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navResp" aria-controls="navResp" aria-expanded="false" aria-label="Navigation">
-            <i class="fas fa-bars"></i>
+            <i class="fas fa-bars" aria-hidden="true"></i>
         </button>
         <div class="collapse navbar-collapse" id="navResp">
             <ul class="navbar-nav ms-auto py-4 py-lg-0 align-items-lg-center">
+                <li class="nav-item"><a class="nav-link" href="#page-top">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="#services">What We Do</a></li>
                 <li class="nav-item"><a class="nav-link" href="#portfolio">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
@@ -31,8 +38,11 @@
                     <div class="lang-toggle">
                         <a href="index.html">HU</a>
                         <span>|</span>
-                        <a href="index-en.html" class="active">EN</a>
+                        <a href="index-en.html" class="active" aria-current="true">EN</a>
                     </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-cta" href="tel:+36302327113"><i class="fas fa-phone" aria-hidden="true"></i> +36 30 232 7113</a>
                 </li>
             </ul>
         </div>
@@ -41,57 +51,73 @@
 
 <!-- ══════════════ HERO ══════════════ -->
 <section id="hero">
-    <div class="hero-grid"></div><div class="hero-glow"></div><div class="hero-glow2"></div>
     <div class="container">
-        <div class="row align-items-center g-4">
-            <div class="col-lg-6 hero-content">
-                <h1 class="hero-title"><span class="hl">FixPC</span><span class="hero-tagline">IT solutions for businesses and individuals</span></h1>
-                <p class="hero-sub">Design and operation of business and home networks. Servicing and maintenance of computers and IT equipment in Szeged and the surrounding area.</p>
-                <div>
-                    <a class="btn-main" href="#portfolio">Our Services</a>
-                    <a class="btn-out"  href="#contact">Contact</a>
-                </div>
-                <div class="hero-stats">
-                    <div><div class="stat-num">2 500 <span style="font-size:1.1rem">HUF</span></div><div class="stat-lbl">Callout fee in Szeged</div></div>
-                    <div><div class="stat-num">6</div><div class="stat-lbl">Main service categories</div></div>
-                    <div><div class="stat-num"><i class="fas fa-wifi" style="font-size:1.4rem"></i></div><div class="stat-lbl">Remote support available</div></div>
+        <div class="row align-items-center g-4 g-lg-5">
+
+            <div class="col-lg-7">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="hl">FixPC</span>
+                        <span class="hero-tagline">IT solutions for businesses and individuals</span>
+                    </h1>
+
+                    <p class="hero-sub">Design and operation of business and home networks. Servicing and maintenance of computers and IT equipment in Szeged, and nationwide upon request.</p>
+                    <div>
+                        <a class="btn-main" href="#portfolio">Our Services</a>
+                        <a class="btn-out"  href="#contact">Contact</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div>
+                            <div class="stat-num">2 500 <span class="stat-unit">HUF</span></div>
+                            <div class="stat-lbl">Callout fee in Szeged</div>
+                        </div>
+                        <div>
+                            <div class="stat-num">6</div>
+                            <div class="stat-lbl">Main service categories</div>
+                        </div>
+                        <div>
+                            <div class="stat-num"><i class="fas fa-wifi stat-unit" aria-hidden="true"></i></div>
+                            <div class="stat-lbl">Remote support available</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-6 hero-logo-wrap">
-                <div class="hero-logo-halo"></div>
-                <img src="assets/img/logo-trimmed.png" alt="FixPC logo" class="hero-logo-img" />
+
+            <div class="col-lg-5 hero-logo-wrap">
+                <div class="hero-logo-halo" aria-hidden="true"></div>
+                <img src="assets/img/logo-trimmed.png" class="hero-logo-img" alt="FixPC" />
             </div>
+
         </div>
     </div>
 </section>
 
 <!-- ══════════════ SERVICES (top 3) ══════════════ -->
-<section class="sec sec-dark" id="services">
+<section class="sec sec-paper" id="services">
     <div class="container">
         <div class="text-center mb-5 fade-in">
-            <span class="sec-tag">What we offer</span>
             <h2 class="sec-title">Comprehensive IT solutions</h2>
-            <p class="sec-sub">Everything in one place, whether it's servicing a single computer or laptop, or even building a complete office network.</p>
+            <p class="sec-sub">Everything in one place, whether it's servicing a computer, laptop, or even building a complete office network.</p>
         </div>
-        <div class="row g-4">
+        <div class="row g-4 svc-grid">
             <div class="col-lg-4 fade-in">
                 <div class="svc-card">
-                    <div class="svc-icon"><i class="fas fa-building-user"></i></div>
-                    <h4>Business IT solutions with long-term partnership</h4>
+                    <div class="svc-icon"><i class="fas fa-building-user" aria-hidden="true"></i></div>
+                    <h3>Business solutions with long-term partnership</h3>
                     <p>Office network deployment, device setup, VPN and other network solutions. Ongoing support under contract, with bespoke solutions tailored to your company.</p>
                 </div>
             </div>
             <div class="col-lg-4 fade-in">
                 <div class="svc-card">
-                    <div class="svc-icon"><i class="fas fa-network-wired"></i></div>
-                    <h4>Network and Smart Devices</h4>
+                    <div class="svc-icon"><i class="fas fa-network-wired" aria-hidden="true"></i></div>
+                    <h3>Network and Smart Devices</h3>
                     <p>Router and modem setup, Wi-Fi optimisation, Mesh systems, structured cabling, NAS, camera systems, smart home devices, TV and set-top box configuration, and everything else network related.</p>
                 </div>
             </div>
             <div class="col-lg-4 fade-in">
                 <div class="svc-card">
-                    <div class="svc-icon"><i class="fas fa-screwdriver-wrench"></i></div>
-                    <h4>Computer, Laptop, Hardware and Software</h4>
+                    <div class="svc-icon"><i class="fas fa-screwdriver-wrench" aria-hidden="true"></i></div>
+                    <h3>Computer, Laptop, Hardware and Software</h3>
                     <p>Diagnostics, repair, cleaning, thermal paste replacement, component swap for computers and laptops. Operating system installation, virus removal, software configuration.</p>
                 </div>
             </div>
@@ -100,17 +126,16 @@
 </section>
 
 <!-- ══════════════ PORTFOLIO ══════════════ -->
-<section class="sec sec-mid" id="portfolio">
+<section class="sec sec-deep" id="portfolio">
     <div class="container">
         <div class="text-center mb-5 fade-in">
-            <span class="sec-tag">Services</span>
             <h2 class="sec-title">All Services</h2>
-            <p class="sec-sub">Click a card for detailed information and pricing.</p>
+            <p class="sec-sub">Click a card for more services</p>
         </div>
 
         <div class="rate-box fade-in">
             <div class="rate-main">
-                <i class="fas fa-clock"></i>
+                <i class="fas fa-clock" aria-hidden="true"></i>
                 <div>
                     <div class="rate-lbl">Expert hourly rate</div>
                     <div class="rate-val">8 000 HUF / hour</div>
@@ -122,63 +147,136 @@
                 assessing the issue, before work begins.
             </p>
         </div>
-        <div class="filter-bar">
-            <button class="filter-btn active" onclick="filterPortfolio('all',this)">All</button>
-            <button class="filter-btn" onclick="filterPortfolio('hardware',this)">Hardware and Laptop</button>
-            <button class="filter-btn" onclick="filterPortfolio('software',this)">Software and Operating System</button>
-            <button class="filter-btn" onclick="filterPortfolio('network',this)">Network</button>
-            <button class="filter-btn" onclick="filterPortfolio('smart',this)">Smart Devices</button>
-            <button class="filter-btn" onclick="filterPortfolio('consulting',this)">Consulting</button>
-            <button class="filter-btn" onclick="filterPortfolio('business',this)">Business</button>
-        </div>
+
         <div class="row g-4" id="portfolio-grid">
 
-            <div class="col-lg-4 col-md-6 portfolio-item fade-in" data-category="business">
-                <div class="p-card" onclick="openModal('m6')">
-                    <div class="p-card-head"><div class="p-card-icon"><i class="fas fa-building"></i></div><div><h5>Business IT Solutions</h5><div class="cat">Business</div></div></div>
-                    <div class="p-card-body"><ul><li>Office network setup</li><li>VPN and other network solutions</li><li>Device deployment</li><li>SLA / maintenance contracts</li></ul></div>
-                    <div class="p-card-foot"><a href="#" class="details-link" onclick="event.preventDefault();openModal('m6')">Details <i class="fas fa-chevron-right fa-xs"></i></a></div>
-                </div>
+            <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+                <button type="button" class="p-card" data-bs-toggle="modal" data-bs-target="#m6">
+                    <div class="p-card-head">
+                        <div class="p-card-icon"><i class="fas fa-building" aria-hidden="true"></i></div>
+                        <div>
+                            <h3>Business IT Solutions</h3>
+                            <div class="cat">Business</div>
+                        </div>
+                    </div>
+                    <div class="p-card-body">
+                        <ul>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Office network setup</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>VPN and other network solutions</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Device deployment</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>SLA / maintenance contracts</li>
+                        </ul>
+                    </div>
+                    <div class="p-card-foot"><span class="details-link">Details <i class="fas fa-chevron-right fa-xs" aria-hidden="true"></i></span></div>
+                </button>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item fade-in" data-category="hardware">
-                <div class="p-card" onclick="openModal('m1')">
-                    <div class="p-card-head"><div class="p-card-icon"><i class="fas fa-laptop"></i></div><div><h5>Computer and Laptop Repair</h5><div class="cat">Hardware</div></div></div>
-                    <div class="p-card-body"><ul><li>Fault diagnosis and repair</li><li>Performance optimization</li><li>Battery replacement</li><li>Cleaning, thermal paste</li><li>Data backup and recovery</li></ul></div>
-                    <div class="p-card-foot"><a href="#" class="details-link" onclick="event.preventDefault();openModal('m1')">Details <i class="fas fa-chevron-right fa-xs"></i></a></div>
-                </div>
+            <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+                <button type="button" class="p-card" data-bs-toggle="modal" data-bs-target="#m1">
+                    <div class="p-card-head">
+                        <div class="p-card-icon"><i class="fas fa-laptop" aria-hidden="true"></i></div>
+                        <div>
+                            <h3>Computer and Laptop Repair</h3>
+                            <div class="cat">Hardware</div>
+                        </div>
+                    </div>
+                    <div class="p-card-body">
+                        <ul>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Fault diagnosis and repair</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Performance optimization</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Battery replacement</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Cleaning, thermal paste</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Data backup and recovery</li>
+                        </ul>
+                    </div>
+                    <div class="p-card-foot"><span class="details-link">Details <i class="fas fa-chevron-right fa-xs" aria-hidden="true"></i></span></div>
+                </button>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item fade-in" data-category="software">
-                <div class="p-card" onclick="openModal('m2')">
-                    <div class="p-card-head"><div class="p-card-icon"><i class="fas fa-desktop"></i></div><div><h5>Software and Operating System</h5><div class="cat">Software</div></div></div>
-                    <div class="p-card-body"><ul><li>Operating system installation and update</li><li>Software installation</li><li>Virus and malware removal</li><li>Email account setup</li></ul></div>
-                    <div class="p-card-foot"><a href="#" class="details-link" onclick="event.preventDefault();openModal('m2')">Details <i class="fas fa-chevron-right fa-xs"></i></a></div>
-                </div>
+            <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+                <button type="button" class="p-card" data-bs-toggle="modal" data-bs-target="#m2">
+                    <div class="p-card-head">
+                        <div class="p-card-icon"><i class="fas fa-desktop" aria-hidden="true"></i></div>
+                        <div>
+                            <h3>Software and Operating System</h3>
+                            <div class="cat">Software</div>
+                        </div>
+                    </div>
+                    <div class="p-card-body">
+                        <ul>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Operating system installation and update</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Software installation</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Virus and malware removal</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Email account setup</li>
+                        </ul>
+                    </div>
+                    <div class="p-card-foot"><span class="details-link">Details <i class="fas fa-chevron-right fa-xs" aria-hidden="true"></i></span></div>
+                </button>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item fade-in" data-category="network">
-                <div class="p-card" onclick="openModal('m3')">
-                    <div class="p-card-head"><div class="p-card-icon"><i class="fas fa-wifi"></i></div><div><h5>Network Setup</h5><div class="cat">Network</div></div></div>
-                    <div class="p-card-body"><ul><li>Router and modem configuration</li><li>Wi-Fi and LAN setup</li><li>Mesh Wi-Fi systems</li><li>Cabling, cable making</li><li>NAS deployment</li></ul></div>
-                    <div class="p-card-foot"><a href="#" class="details-link" onclick="event.preventDefault();openModal('m3')">Details <i class="fas fa-chevron-right fa-xs"></i></a></div>
-                </div>
+            <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+                <button type="button" class="p-card" data-bs-toggle="modal" data-bs-target="#m3">
+                    <div class="p-card-head">
+                        <div class="p-card-icon"><i class="fas fa-wifi" aria-hidden="true"></i></div>
+                        <div>
+                            <h3>Network Setup and Consulting</h3>
+                            <div class="cat">Network</div>
+                        </div>
+                    </div>
+                    <div class="p-card-body">
+                        <ul>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Router and modem configuration</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Wi-Fi and LAN setup</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Mesh Wi-Fi systems</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Cabling, cable making</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>NAS deployment</li>
+                        </ul>
+                    </div>
+                    <div class="p-card-foot"><span class="details-link">Details <i class="fas fa-chevron-right fa-xs" aria-hidden="true"></i></span></div>
+                </button>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item fade-in" data-category="smart">
-                <div class="p-card" onclick="openModal('m4')">
-                    <div class="p-card-head"><div class="p-card-icon"><i class="fas fa-house-signal"></i></div><div><h5>Smart Devices and Tech Setup</h5><div class="cat">Smart Devices</div></div></div>
-                    <div class="p-card-body"><ul><li>Smart TV, Chromecast, Apple TV</li><li>Smart bulbs, smart plugs</li><li>Robot vacuum setup</li><li>Set-top box, speakers</li><li>CD/DVD digitization</li></ul></div>
-                    <div class="p-card-foot"><a href="#" class="details-link" onclick="event.preventDefault();openModal('m4')">Details <i class="fas fa-chevron-right fa-xs"></i></a></div>
-                </div>
+            <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+                <button type="button" class="p-card" data-bs-toggle="modal" data-bs-target="#m4">
+                    <div class="p-card-head">
+                        <div class="p-card-icon"><i class="fas fa-house-signal" aria-hidden="true"></i></div>
+                        <div>
+                            <h3>Smart Devices and Tech Setup</h3>
+                            <div class="cat">Smart Devices</div>
+                        </div>
+                    </div>
+                    <div class="p-card-body">
+                        <ul>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Smart TV, Chromecast, Apple TV</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Smart bulbs, smart plugs</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Robot vacuum setup</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Set-top box, speakers</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>CD/DVD digitization</li>
+                        </ul>
+                    </div>
+                    <div class="p-card-foot"><span class="details-link">Details <i class="fas fa-chevron-right fa-xs" aria-hidden="true"></i></span></div>
+                </button>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item fade-in" data-category="consulting">
-                <div class="p-card" onclick="openModal('m5')">
-                    <div class="p-card-head"><div class="p-card-icon"><i class="fas fa-comments"></i></div><div><h5>Consulting and Remote Support</h5><div class="cat">Consulting</div></div></div>
-                    <div class="p-card-body"><ul><li>Hardware buying advice</li><li>Peripheral selection</li><li>Remote help (TeamViewer/AnyDesk)</li><li>Usage tips and optimisation</li></ul></div>
-                    <div class="p-card-foot"><a href="#" class="details-link" onclick="event.preventDefault();openModal('m5')">Details <i class="fas fa-chevron-right fa-xs"></i></a></div>
-                </div>
+            <div class="col-lg-4 col-md-6 portfolio-item fade-in">
+                <button type="button" class="p-card" data-bs-toggle="modal" data-bs-target="#m5">
+                    <div class="p-card-head">
+                        <div class="p-card-icon"><i class="fas fa-comments" aria-hidden="true"></i></div>
+                        <div>
+                            <h3>Consulting and Remote Support</h3>
+                            <div class="cat">Consulting</div>
+                        </div>
+                    </div>
+                    <div class="p-card-body">
+                        <ul>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Hardware buying advice</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Peripheral selection</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Remote help (TeamViewer/AnyDesk)</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i>Usage tips and optimisation</li>
+                        </ul>
+                    </div>
+                    <div class="p-card-foot"><span class="details-link">Details <i class="fas fa-chevron-right fa-xs" aria-hidden="true"></i></span></div>
+                </button>
             </div>
 
         </div>
@@ -186,21 +284,40 @@
 </section>
 
 <!-- ══════════════ ABOUT ══════════════ -->
-<section class="sec sec-dark" id="about">
+<section class="sec sec-paper" id="about">
     <div class="container">
         <div class="row align-items-center g-5">
-            <div class="col-lg-5 fade-in">
-                <span class="sec-tag">About Us</span>
+            <div class="col-lg-5 fade-in about-copy">
                 <h2 class="sec-title">A reliable IT partner for businesses and individuals</h2>
-                <p style="color:var(--txt-muted);line-height:1.8;margin-bottom:1.4rem">FixPC provides reliable IT services for businesses and individuals. We mainly work through on-site callouts, so problems can be resolved quickly and efficiently. For device repairs, handover takes place at a pre-arranged time.</p>
-                <p style="color:var(--txt-muted);line-height:1.8">Our experience covers building corporate office networks, designing bespoke IT solutions, and operating and servicing systems. Whether the task is small or complex, we provide our clients with tailored solutions.</p>
+                <p>FixPC provides reliable IT solutions for businesses and individuals. We mainly work through on-site callouts, so problems can be resolved quickly and efficiently. For device repairs, handover takes place at a pre-arranged time.</p>
+                <p>Our experience covers building corporate office networks, designing bespoke IT solutions, and operating and servicing systems. Whether the task is small or complex, we provide our clients with tailored solutions.</p>
             </div>
             <div class="col-lg-7 fade-in">
                 <div class="row g-3">
-                    <div class="col-sm-6"><div class="about-card"><div class="about-icon"><i class="fas fa-user-tie"></i></div><div><h6>Personal Service</h6><p>On-site callout or device handover at a pre-arranged time.</p></div></div></div>
-                    <div class="col-sm-6"><div class="about-card"><div class="about-icon"><i class="fas fa-location-dot"></i></div><div><h6>On-site Callout</h6><p>The callout fee is 2 500 HUF within Szeged; for other locations, prior arrangement is required.</p></div></div></div>
-                    <div class="col-sm-6"><div class="about-card"><div class="about-icon"><i class="fas fa-shield-halved"></i></div><div><h6>Transparent Pricing</h6><p>No hidden fees, every job runs on the terms agreed in advance.</p></div></div></div>
-                    <div class="col-sm-6"><div class="about-card"><div class="about-icon"><i class="fas fa-handshake"></i></div><div><h6>Business Partnership</h6><p>Long-term availability and maintenance contracts for companies.</p></div></div></div>
+                    <div class="col-sm-6">
+                        <div class="about-card">
+                            <div class="check-badge"><i class="fas fa-handshake" aria-hidden="true"></i></div>
+                            <div><h3>Business Partnership</h3><p>Long-term availability and maintenance contracts for companies.</p></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="about-card">
+                            <div class="check-badge"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
+                            <div><h3>Transparent Pricing</h3><p>No hidden fees, every job runs on the terms agreed in advance.</p></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="about-card">
+                            <div class="check-badge"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
+                            <div><h3>Personal Service</h3><p>On-site callout or device handover at a pre-arranged time.</p></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="about-card">
+                            <div class="check-badge"><i class="fas fa-location-dot" aria-hidden="true"></i></div>
+                            <div><h3>On-site Callout</h3><p>The callout fee is 2 500 HUF within Szeged; for other locations, prior arrangement is required.</p></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -208,33 +325,52 @@
 </section>
 
 <!-- ══════════════ CONTACT ══════════════ -->
-<section class="sec" id="contact" style="background:var(--bg-dark)">
+<section class="sec sec-night" id="contact">
     <div class="container">
         <div class="text-center mb-5 fade-in">
-            <span class="sec-tag">Contact</span>
             <h2 class="sec-title">Get in touch!</h2>
             <p class="sec-sub">Feel free to reach out to us by email, phone or on one of our social media pages. We will get back to you as soon as possible.</p>
         </div>
+
         <div class="contact-wrap fade-in">
             <div class="row g-0">
                 <div class="col-lg-5">
                     <div class="c-panel-left h-100">
                         <h3>FixPC</h3>
                         <p class="c-sub">IT services</p>
-                        <div class="c-item"><div class="c-icon"><i class="fas fa-envelope"></i></div><div><div class="c-lbl">Email</div><div class="c-val"><a href="mailto:fixpchungary@gmail.com">fixpchungary@gmail.com</a></div></div></div>
-                        <div class="c-item"><div class="c-icon"><i class="fas fa-phone"></i></div><div><div class="c-lbl">Phone</div><div class="c-val"><a href="tel:+36302327113">+36 30 232 7113</a></div></div></div>
-                        <div class="c-item"><div class="c-icon"><i class="fas fa-location-dot"></i></div><div><div class="c-lbl">On-site callout</div><div class="c-val">Szeged 2 500 HUF, for other locations by arrangement</div></div></div>
-                        <div class="c-item"><div class="c-icon"><i class="fas fa-clock"></i></div><div><div class="c-lbl">Availability</div><div class="c-val">Weekdays and weekends, by appointment</div></div></div>
+                        <div class="c-item">
+                            <div class="c-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+                            <div><div class="c-lbl">Email</div><div class="c-val"><a href="mailto:fixpchungary@gmail.com">fixpchungary@gmail.com</a></div></div>
+                        </div>
+                        <div class="c-item">
+                            <div class="c-icon"><i class="fas fa-phone" aria-hidden="true"></i></div>
+                            <div><div class="c-lbl">Phone</div><div class="c-val"><a href="tel:+36302327113">+36 30 232 7113</a></div></div>
+                        </div>
+                        <div class="c-item">
+                            <div class="c-icon"><i class="fas fa-map-pin" aria-hidden="true"></i></div>
+                            <div><div class="c-lbl">Address</div><div class="c-val">6721 Szeged, Bocskai utca 5, Hungary</div></div>
+                        </div>
+                        <div class="c-item">
+                            <div class="c-icon"><i class="fas fa-location-dot" aria-hidden="true"></i></div>
+                            <div><div class="c-lbl">On-site callout</div><div class="c-val">Szeged 2 500 HUF, for other locations by arrangement</div></div>
+                        </div>
+                        <div class="c-item">
+                            <div class="c-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+                            <div><div class="c-lbl">Availability</div><div class="c-val">Weekdays and weekends, by appointment</div></div>
+                        </div>
                         <div class="social-row">
-                            <a href="https://www.facebook.com/FixPCSzeged/" target="_blank" rel="noopener" class="soc-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/fixpchungary" target="_blank" rel="noopener" class="soc-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.tiktok.com/@fixpchungary" target="_blank" rel="noopener" class="soc-btn" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                            <a href="https://www.facebook.com/FixPCSzeged/" target="_blank" rel="noopener" class="soc-btn" title="Facebook" aria-label="FixPC on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                            <a href="https://www.instagram.com/fixpchungary" target="_blank" rel="noopener" class="soc-btn" title="Instagram" aria-label="FixPC on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="https://www.tiktok.com/@fixpchungary" target="_blank" rel="noopener" class="soc-btn" title="TikTok" aria-label="FixPC on TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-7">
                     <div class="c-panel-right c-panel-map h-100">
                         <div class="map-wrap">
+                            <button type="button" class="map-wake" data-map-wake aria-label="Activate map for scrolling">
+                                <i class="fas fa-location-dot" aria-hidden="true"></i>
+                            </button>
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2758.6304571776454!2d20.14565387673573!3d46.25757378015459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4744880cb0ceeddf%3A0xbdc6b4c98947dcdf!2sSzeged%2C%20Bocskai%20u.%205%2C%206721!5e0!3m2!1shu!2shu!4v1785677727695!5m2!1shu!2shu"
                                 title="FixPC, Bocskai utca 5, Szeged map"
@@ -253,7 +389,12 @@
 <footer>
     <div class="container">
         <div class="row align-items-center g-3">
-            <div class="col-md-3 foot-logo"><a href="index-en.html"><img src="assets/img/logo-trimmed.png" alt="FixPC" /></a></div>
+            <div class="col-md-3 foot-logo">
+                <a href="index-en.html" class="foot-logo">
+                    <img src="assets/img/logo-trimmed.png" alt="" aria-hidden="true" />
+                    <span class="brand-word">Fix<span class="pc">PC</span></span>
+                </a>
+            </div>
             <div class="col-md-6 text-center">
                 <div class="foot-links justify-content-center d-flex flex-wrap gap-3">
                     <a href="privacy-policy-en.html">Privacy Policy</a>
@@ -265,110 +406,124 @@
     </div>
 </footer>
 
+<a class="tap-call" href="tel:+36302327113" aria-label="Call: +36 30 232 7113">
+    <i class="fas fa-phone" aria-hidden="true"></i>
+</a>
+
 <!-- ══════════════ MODALS (EN) ══════════════ -->
 
-<!-- M1 -->
-<div class="modal fade portfolio-modal" id="m1" tabindex="-1" aria-hidden="true">
+<div class="modal fade portfolio-modal" id="m1" tabindex="-1" aria-hidden="true" aria-labelledby="m1TitleEn">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"><div class="modal-content">
-        <div class="modal-header"><div style="display:flex;align-items:center;gap:.9rem"><div class="p-card-icon"><i class="fas fa-laptop"></i></div><h5 class="modal-title">Computer and Laptop Repair</h5></div><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-header"><div style="display:flex;align-items:center;gap:.9rem"><div class="p-card-icon"><i class="fas fa-laptop" aria-hidden="true"></i></div><h2 class="modal-title" id="m1TitleEn">Computer and Laptop Repair</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
         <div class="modal-body">
             <p class="modal-intro">Full hardware service for computers and laptops.</p>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-magnifying-glass"></i>Fault diagnosis</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-wrench"></i>Repair</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-gauge-high"></i>Performance optimization / speed-up</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-battery-half"></i>Laptop battery replacement</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-microchip"></i>Hardware upgrade (RAM, SSD etc.)</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-broom"></i>Internal dust cleaning</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-temperature-half"></i>Thermal paste replacement</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-hard-drive"></i>Data backup (from existing drive)</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-rotate-left"></i>Data recovery (deleted / damaged)</div></div>
-            <div class="modal-callout"><i class="fas fa-info-circle me-1"></i><strong>Callout fee within Szeged: 2 500 HUF.</strong> Expert hourly rate: 8 000 HUF / hour, parts are charged separately. The exact price is agreed after assessing the issue, before work begins.</div>
+            <div class="svc-group-label">Troubleshooting</div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-magnifying-glass" aria-hidden="true"></i>Fault diagnosis</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-wrench" aria-hidden="true"></i>Repair</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-gauge-high" aria-hidden="true"></i>Performance optimization / speed-up</div></div>
+            <div class="svc-group-label">Maintenance</div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-battery-half" aria-hidden="true"></i>Laptop battery replacement</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-microchip" aria-hidden="true"></i>Hardware upgrade (RAM, SSD etc.)</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-broom" aria-hidden="true"></i>Internal dust cleaning</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-temperature-half" aria-hidden="true"></i>Thermal paste replacement</div></div>
+            <div class="svc-group-label">Data Recovery</div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-hard-drive" aria-hidden="true"></i>Data backup (from existing drive)</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-rotate-left" aria-hidden="true"></i>Data recovery (deleted / damaged)</div></div>
+            <div class="modal-callout"><i class="fas fa-info-circle me-1" aria-hidden="true"></i><strong>Callout fee within Szeged: 2 500 HUF.</strong> Expert hourly rate: 8 000 HUF / hour, parts are charged separately. The exact price is agreed after assessing the issue, before work begins.</div>
+            <a class="modal-contact-cta" href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i>Get in Touch</a>
         </div>
     </div></div>
 </div>
 
-<!-- M2 -->
-<div class="modal fade portfolio-modal" id="m2" tabindex="-1" aria-hidden="true">
+<div class="modal fade portfolio-modal" id="m2" tabindex="-1" aria-hidden="true" aria-labelledby="m2TitleEn">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"><div class="modal-content">
-        <div class="modal-header"><div style="display:flex;align-items:center;gap:.9rem"><div class="p-card-icon"><i class="fas fa-desktop"></i></div><h5 class="modal-title">Software and Operating System</h5></div><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-header"><div style="display:flex;align-items:center;gap:.9rem"><div class="p-card-icon"><i class="fas fa-desktop" aria-hidden="true"></i></div><h2 class="modal-title" id="m2TitleEn">Software and Operating System</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
         <div class="modal-body">
             <p class="modal-intro">From operating system installation to virus removal and email setup, on Windows and Linux alike.</p>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-download"></i>Operating system installation (Windows / Linux)</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-arrow-up-right-dots"></i>Operating system upgrade / migration</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-compact-disc"></i>Software installation and setup (Office, browser etc.)</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-shield-virus"></i>Virus and malware removal</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-envelope-circle-check"></i>Email account setup (Outlook, Gmail, IMAP/POP)</div></div>
-            <div class="modal-callout"><i class="fas fa-info-circle me-1"></i><strong>Callout fee within Szeged: 2 500 HUF.</strong> Expert hourly rate: 8 000 HUF / hour, parts are charged separately. The exact price is agreed after assessing the issue, before work begins.</div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-download" aria-hidden="true"></i>Operating system installation (Windows / Linux)</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-arrow-up-right-dots" aria-hidden="true"></i>Operating system upgrade / migration</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-compact-disc" aria-hidden="true"></i>Software installation and setup (Office, browser etc.)</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-shield-virus" aria-hidden="true"></i>Virus and malware removal</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-envelope-circle-check" aria-hidden="true"></i>Email account setup (Outlook, Gmail, IMAP/POP)</div></div>
+            <div class="modal-callout"><i class="fas fa-info-circle me-1" aria-hidden="true"></i><strong>Callout fee within Szeged: 2 500 HUF.</strong> Expert hourly rate: 8 000 HUF / hour, parts are charged separately. The exact price is agreed after assessing the issue, before work begins.</div>
+            <a class="modal-contact-cta" href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i>Get in Touch</a>
         </div>
     </div></div>
 </div>
 
-<!-- M3 -->
-<div class="modal fade portfolio-modal" id="m3" tabindex="-1" aria-hidden="true">
+<div class="modal fade portfolio-modal" id="m3" tabindex="-1" aria-hidden="true" aria-labelledby="m3TitleEn">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"><div class="modal-content">
-        <div class="modal-header"><div style="display:flex;align-items:center;gap:.9rem"><div class="p-card-icon"><i class="fas fa-wifi"></i></div><h5 class="modal-title">Network Setup and Consulting</h5></div><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-header"><div style="display:flex;align-items:center;gap:.9rem"><div class="p-card-icon"><i class="fas fa-wifi" aria-hidden="true"></i></div><h2 class="modal-title" id="m3TitleEn">Network Setup and Consulting</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
         <div class="modal-body">
             <p class="modal-intro">Home and office network design, installation and configuration, from a simple router to a complex Mesh system.</p>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-tower-broadcast"></i>Router / modem configuration</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-wifi"></i>Wi-Fi optimisation, channel setup</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-ethernet"></i>LAN network setup</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-circle-nodes"></i>Mesh Wi-Fi system deployment</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-signal"></i>Wi-Fi range extension (repeater / access point)</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-plug"></i>Printer / smart device network connection</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-cable-car"></i>Cabling, UTP cable making and routing</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-camera"></i>Network settings for camera systems</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-server"></i>NAS deployment</div></div>
-            <div class="modal-callout"><i class="fas fa-info-circle me-1"></i><strong>Callout fee within Szeged: 2 500 HUF.</strong> Expert hourly rate: 8 000 HUF / hour, parts are charged separately. The exact price is agreed after assessing the issue, before work begins. Complex network projects receive individual quotes.</div>
+            <div class="svc-group-label">Wi-Fi &amp; Coverage</div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-tower-broadcast" aria-hidden="true"></i>Router / modem configuration</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-wifi" aria-hidden="true"></i>Wi-Fi optimisation, channel setup</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-circle-nodes" aria-hidden="true"></i>Mesh Wi-Fi system deployment</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-signal" aria-hidden="true"></i>Wi-Fi range extension (repeater / access point)</div></div>
+            <div class="svc-group-label">Wired Network</div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-ethernet" aria-hidden="true"></i>LAN network setup</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-cable-car" aria-hidden="true"></i>Cabling, UTP cable making and routing</div></div>
+            <div class="svc-group-label">Connected Devices</div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-plug" aria-hidden="true"></i>Printer / smart device network connection</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-camera" aria-hidden="true"></i>Network settings for camera systems</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-server" aria-hidden="true"></i>NAS deployment</div></div>
+            <div class="modal-callout"><i class="fas fa-info-circle me-1" aria-hidden="true"></i><strong>Callout fee within Szeged: 2 500 HUF.</strong> Expert hourly rate: 8 000 HUF / hour, parts are charged separately. The exact price is agreed after assessing the issue, before work begins. Complex network projects receive individual quotes.</div>
+            <a class="modal-contact-cta" href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i>Get in Touch</a>
         </div>
     </div></div>
 </div>
 
-<!-- M4 -->
-<div class="modal fade portfolio-modal" id="m4" tabindex="-1" aria-hidden="true">
+<div class="modal fade portfolio-modal" id="m4" tabindex="-1" aria-hidden="true" aria-labelledby="m4TitleEn">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"><div class="modal-content">
-        <div class="modal-header"><div style="display:flex;align-items:center;gap:.9rem"><div class="p-card-icon"><i class="fas fa-house-signal"></i></div><h5 class="modal-title">Smart Devices and Tech Setup</h5></div><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-header"><div style="display:flex;align-items:center;gap:.9rem"><div class="p-card-icon"><i class="fas fa-house-signal" aria-hidden="true"></i></div><h2 class="modal-title" id="m4TitleEn">Smart Devices and Tech Setup</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
         <div class="modal-body">
             <p class="modal-intro">Setup and configuration of modern smart devices, so everything is in the right place.</p>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-tv"></i>TV / Smart TV setup, app configuration</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-satellite-dish"></i>Set-top box, speaker setup</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fab fa-chromecast"></i>Chromecast / Apple TV / Android TV setup</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-lightbulb"></i>Smart bulbs and smart plug setup</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-robot"></i>Robot vacuum setup and mapping</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-home"></i>Other smart device configuration</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-compact-disc"></i>CD / DVD digitization</div></div>
-            <div class="modal-callout"><i class="fas fa-info-circle me-1"></i><strong>Callout fee within Szeged: 2 500 HUF.</strong> Expert hourly rate: 8 000 HUF / hour, parts are charged separately. The exact price is agreed after assessing the issue, before work begins.</div>
+            <div class="svc-group-label">Entertainment Electronics</div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-tv" aria-hidden="true"></i>TV / Smart TV setup, app configuration</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-satellite-dish" aria-hidden="true"></i>Set-top box, speaker setup</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fab fa-chromecast" aria-hidden="true"></i>Chromecast / Apple TV / Android TV setup</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-compact-disc" aria-hidden="true"></i>CD / DVD digitization</div></div>
+            <div class="svc-group-label">Smart Home</div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-lightbulb" aria-hidden="true"></i>Smart bulbs and smart plug setup</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-robot" aria-hidden="true"></i>Robot vacuum setup and mapping</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-home" aria-hidden="true"></i>Other smart device configuration</div></div>
+            <div class="modal-callout"><i class="fas fa-info-circle me-1" aria-hidden="true"></i><strong>Callout fee within Szeged: 2 500 HUF.</strong> Expert hourly rate: 8 000 HUF / hour, parts are charged separately. The exact price is agreed after assessing the issue, before work begins.</div>
+            <a class="modal-contact-cta" href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i>Get in Touch</a>
         </div>
     </div></div>
 </div>
 
-<!-- M5 -->
-<div class="modal fade portfolio-modal" id="m5" tabindex="-1" aria-hidden="true">
+<div class="modal fade portfolio-modal" id="m5" tabindex="-1" aria-hidden="true" aria-labelledby="m5TitleEn">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"><div class="modal-content">
-        <div class="modal-header"><div style="display:flex;align-items:center;gap:.9rem"><div class="p-card-icon"><i class="fas fa-comments"></i></div><h5 class="modal-title">Consulting and Remote Support</h5></div><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-header"><div style="display:flex;align-items:center;gap:.9rem"><div class="p-card-icon"><i class="fas fa-comments" aria-hidden="true"></i></div><h2 class="modal-title" id="m5TitleEn">Consulting and Remote Support</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
         <div class="modal-body">
-            <p class="modal-intro">Planning a purchase? Not sure what the best option is? We will help you find the right solution.</p>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-laptop"></i>PC / laptop buying advice</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-memory"></i>Hardware / peripheral selection (RAM, SSD, monitor etc.)</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-lightbulb"></i>General IT tips and optimisation</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-display"></i>Remote support via TeamViewer / AnyDesk</div></div>
-            <div class="modal-callout"><i class="fas fa-exclamation-circle me-1"></i><strong>Remote support:</strong> Available for existing customers or after prior consultation. New customers are encouraged to start with a phone or in-person discussion first.</div>
+            <p class="modal-intro">Planning a purchase? Need some help? We're happy to help you find the right solution for you.</p>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-laptop" aria-hidden="true"></i>PC / laptop buying advice</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-memory" aria-hidden="true"></i>Hardware / peripheral selection (RAM, SSD, monitor etc.)</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-lightbulb" aria-hidden="true"></i>General IT tips and optimisation</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-display" aria-hidden="true"></i>Remote support via TeamViewer / AnyDesk</div></div>
+            <div class="modal-callout is-warning"><div class="callout-flag"><i class="fas fa-exclamation-circle" aria-hidden="true"></i>Important</div><strong>Remote support:</strong> Available for existing customers or after prior consultation. New customers are encouraged to start with a phone or in-person discussion first.</div>
+            <a class="modal-contact-cta" href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i>Get in Touch</a>
         </div>
     </div></div>
 </div>
 
-<!-- M6 -->
-<div class="modal fade portfolio-modal" id="m6" tabindex="-1" aria-hidden="true">
+<div class="modal fade portfolio-modal" id="m6" tabindex="-1" aria-hidden="true" aria-labelledby="m6TitleEn">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"><div class="modal-content">
-        <div class="modal-header"><div style="display:flex;align-items:center;gap:.9rem"><div class="p-card-icon"><i class="fas fa-building"></i></div><h5 class="modal-title">Business IT Solutions</h5></div><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-header"><div style="display:flex;align-items:center;gap:.9rem"><div class="p-card-icon"><i class="fas fa-building" aria-hidden="true"></i></div><h2 class="modal-title" id="m6TitleEn">Business IT Solutions</h2></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
         <div class="modal-body">
             <p class="modal-intro">We provide complex business IT solutions from planning to implementation. Our services include office network deployment, VPN access setup, and the commissioning of IT equipment.</p>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-network-wired"></i>Office / industrial network setup</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-shield-halved"></i>VPN setup and configuration</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-desktop"></i>Workstation / PC deployment</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-print"></i>Printer / MFP setup</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-compact-disc"></i>Software installation and licence management</div></div>
-            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-handshake"></i>SLA / monthly maintenance contract</div></div>
-            <div class="modal-callout"><i class="fas fa-briefcase me-1"></i>For business orders we always provide a <strong>detailed custom quote</strong> after a personal consultation. Get in touch!</div>
+            <div class="svc-group-label">Network &amp; Equipment</div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-network-wired" aria-hidden="true"></i>Office / industrial network setup</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-shield-halved" aria-hidden="true"></i>VPN setup and configuration</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-desktop" aria-hidden="true"></i>Workstation / PC deployment</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-print" aria-hidden="true"></i>Printer / MFP setup</div></div>
+            <div class="svc-group-label">Software &amp; Operations</div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-compact-disc" aria-hidden="true"></i>Software installation and licence management</div></div>
+            <div class="svc-line"><div class="svc-line-name"><i class="fas fa-handshake" aria-hidden="true"></i>SLA / monthly maintenance contract</div></div>
+            <div class="modal-callout"><i class="fas fa-briefcase me-1" aria-hidden="true"></i>For business orders we always provide a <strong>detailed custom quote</strong> after a personal consultation. Get in touch!</div>
+            <a class="modal-contact-cta" href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i>Get in Touch</a>
         </div>
     </div></div>
 </div>

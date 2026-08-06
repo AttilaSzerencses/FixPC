@@ -1,5 +1,6 @@
 # Claude Code / helyi eszközkonfiguráció - nem resze a weboldal projektnek
 .claude/
+.impeccable/
 
 # OS / szerkesztő szemet
 .DS_Store

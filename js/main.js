@@ -36,96 +36,31 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // ── Portfolio filter ───────────────────────────────────
-    window.filterPortfolio = function (category, btn) {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        document.querySelectorAll('.portfolio-item').forEach(item => {
-            const show = category === 'all' || item.dataset.category === category;
-            item.style.display = show ? '' : 'none';
+    // ── Google Maps scroll-trap guard: one click "wakes" the map ───
+    document.querySelectorAll('[data-map-wake]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.classList.add('is-hidden');
+            btn.setAttribute('tabindex', '-1');
+            btn.setAttribute('aria-hidden', 'true');
         });
-    };
-
-    // ── Bootstrap modalok – nyitas/zaras, arva backdrop elleni vedelem ──
-    //
-    // Oka: "new bootstrap.Modal(el)" minden kattintasra UJ peldanyt hozott
-    // letre ahelyett, hogy az elemhez mar tartozo peldanyt hasznalta volna
-    // ujra. Ha valaki meg a nyitasi animacio kozben (kb. 300 ms-en belul)
-    // rakattintott az X gombra, a Bootstrap sajat belso "_isTransitioning"
-    // vedelme CSENDBEN eldobta a hide() hivast: a modal latszolag nem
-    // reagalt, egy lathatatlan .modal-backdrop pedig ott ragadt a body-n,
-    // ami blokkolta az egesz oldal kattinthatosagat.
-    //
-    // Megoldas ket reteg:
-    //   1) getOrCreateInstance: egyetlen Modal-peldany elemenkent, es uj
-    //      modal nyitasa elott minden mas nyitva maradt modal bezarasa.
-    //   2) Kenyszeritett utolagos ellenorzes: fix keslelteles utan, a
-    //      Bootstrap belso allapotatol fuggetlenul, kezzel bezarjuk a
-    //      modalt (ha meg "nyitva" allna) es eltavolitunk minden arva
-    //      backdrop-ot. Ez akkor is helyreallitja a lapot, ha a hide()
-    //      hivast a fenti vedelem csendben eldobta.
-
-    function resetBodyLock() {
-        document.body.classList.remove('modal-open');
-        document.body.style.removeProperty('overflow');
-        document.body.style.removeProperty('padding-right');
-    }
-
-    function forceCloseModal(modalEl) {
-        if (!modalEl) return;
-        const instance = bootstrap.Modal.getInstance(modalEl);
-        if (instance) instance.hide();
-        // Fuggetlenul attol, hogy a fenti hide() lefutott-e, kezzel is
-        // biztositjuk, hogy a modal ne maradjon lathato allapotban.
-        modalEl.classList.remove('show');
-        modalEl.style.display = 'none';
-        modalEl.setAttribute('aria-hidden', 'true');
-        modalEl.removeAttribute('aria-modal');
-        modalEl.removeAttribute('role');
-    }
-
-    function reconcileBackdrops() {
-        const shown = document.querySelectorAll('.modal.show').length;
-        const backdrops = document.querySelectorAll('.modal-backdrop');
-        if (shown === 0) {
-            backdrops.forEach(bd => bd.remove());
-            resetBodyLock();
-        } else if (backdrops.length > shown) {
-            Array.from(backdrops).slice(0, backdrops.length - shown).forEach(bd => bd.remove());
-        }
-    }
-
-    window.openModal = function (id) {
-        const el = document.getElementById(id);
-        if (!el) return;
-
-        // minden mas nyitva levo modal azonnali bezarasa, hogy sose
-        // halmozodhasson tobb backdrop egymasra
-        document.querySelectorAll('.portfolio-modal.show').forEach(other => {
-            if (other !== el) forceCloseModal(other);
-        });
-        reconcileBackdrops();
-
-        bootstrap.Modal.getOrCreateInstance(el).show();
-    };
-
-    document.querySelectorAll('.portfolio-modal').forEach(modalEl => {
-        modalEl.addEventListener('hidden.bs.modal', reconcileBackdrops);
     });
 
-    // Kenyszeritett zaras minden X-gombra vagy Escape-re torteno zarasi
-    // kiserlet utan, fix keslelteles utan - fuggetlenul attol, hogy a
-    // Bootstrap sajat hide() hivasa lefutott-e vagy csendben eldobodott.
-    document.addEventListener('click', event => {
-        const btn = event.target.closest('[data-bs-dismiss="modal"]');
-        if (!btn) return;
-        const modalEl = btn.closest('.portfolio-modal');
-        setTimeout(() => { forceCloseModal(modalEl); reconcileBackdrops(); }, 400);
-    });
-    document.addEventListener('keydown', event => {
-        if (event.key !== 'Escape') return;
-        const openModalEl = document.querySelector('.portfolio-modal.show');
-        setTimeout(() => { forceCloseModal(openModalEl); reconcileBackdrops(); }, 400);
+    // ── Modal "contact" CTA: close the modal, then scroll to #contact ──
+    const contactSection = document.getElementById('contact');
+    document.querySelectorAll('.modal-contact-cta').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modalEl = btn.closest('.modal');
+            if (modalEl && window.bootstrap) {
+                const instance = bootstrap.Modal.getOrCreateInstance(modalEl);
+                modalEl.addEventListener('hidden.bs.modal', () => {
+                    contactSection?.scrollIntoView({ behavior: 'smooth' });
+                }, { once: true });
+                instance.hide();
+            } else {
+                contactSection?.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
     });
 
 });

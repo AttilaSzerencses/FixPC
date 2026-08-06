@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Szolgáltatási feltételek – FixPC</title>
     <link rel="icon" type="image/png" href="assets/img/Logo.png" />
+    <link rel="preload" href="assets/fonts/BigShoulders-800-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/BigShoulders-800-latinext.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/Archivo-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/Archivo-400-latinext.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="vendor/bootstrap.min.css" />
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/fontawesome.css" />
@@ -13,7 +17,7 @@
 <body>
 <nav class="navbar">
     <div class="container d-flex justify-content-between align-items-center">
-        <a class="navbar-brand" href="index.html"><img src="assets/img/logo-trimmed.png" alt="FixPC" /></a>
+        <a class="navbar-brand" href="index.html"><img src="assets/img/logo-trimmed.png" class="brand-mark" alt="" aria-hidden="true" /><span class="brand-word">Fix<span class="pc">PC</span></span></a>
         <div class="nav-right">
             <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> <span>Vissza a főoldalra</span></a>
             <div class="doc-lang">
@@ -37,11 +41,11 @@
 
     <h2>1. A szolgáltató adatai</h2>
     <p>
-        <strong style="color:white">Szolgáltató:</strong> FixPC - Szerencsés Attila e.v.<br>
-        <strong style="color:white">Adószám:</strong> 91762650-1-26<br>
-        <strong style="color:white">Székhely:</strong> 6721 Szeged, Bocskai utca 5. 1. emelet 8.<br>
-        <strong style="color:white">E-mail:</strong> <a href="mailto:fixpchungary@gmail.com">fixpchungary@gmail.com</a><br>
-        <strong style="color:white">Telefon:</strong> <a href="tel:+36302327113">+36 30 232 7113</a>
+        <strong style="color:var(--ink)">Szolgáltató:</strong> FixPC - Szerencsés Attila e.v.<br>
+        <strong style="color:var(--ink)">Adószám:</strong> 91762650-1-26<br>
+        <strong style="color:var(--ink)">Székhely:</strong> 6721 Szeged, Bocskai utca 5. 1. emelet 8.<br>
+        <strong style="color:var(--ink)">E-mail:</strong> <a href="mailto:fixpchungary@gmail.com">fixpchungary@gmail.com</a><br>
+        <strong style="color:var(--ink)">Telefon:</strong> <a href="tel:+36302327113">+36 30 232 7113</a>
     </p>
 
     <h2>2. A feltételek hatálya</h2>
@@ -72,10 +76,10 @@
 
     <h2>4. Árak, fizetés és számlázás</h2>
     <ul>
-        <li>A szakértői óradíj <strong style="color:white">8 000 Ft / óra</strong>. Ez az óradíj a mérvadó a hibajavítások és az egyedi munkák árazásánál.</li>
-        <li>A weboldalon szereplő árak <strong style="color:white">tájékoztató jellegűek</strong>, és a munkadíjra vonatkoznak. Az alkatrészek, eszközök ára ezen felül értendő. A pontos árazás minden esetben egyeztetés után alakul ki.</li>
+        <li>A szakértői óradíj <strong style="color:var(--ink)">8 000 Ft / óra</strong>. Ez az óradíj a mérvadó a hibajavítások és az egyedi munkák árazásánál.</li>
+        <li>A weboldalon szereplő árak <strong style="color:var(--ink)">tájékoztató jellegűek</strong>, és a munkadíjra vonatkoznak. Az alkatrészek, eszközök ára ezen felül értendő. A pontos árazás minden esetben egyeztetés után alakul ki.</li>
         <li>A tényleges árat a hiba feltárása után, a munka megkezdése előtt egyeztetjük. Ha a feltárás során kiderül, hogy a javítás a becsültnél többe kerül, előzetesen jelezzük, és csak a jóváhagyásod után folytatjuk.</li>
-        <li>Szegeden belüli helyszíni kiszállás díja <strong style="color:white">2 500 Ft</strong>. Szegeden kívül, más település esetén a kiszállási díj egyedi megállapodás tárgya.</li>
+        <li>Szegeden belüli helyszíni kiszállás díja <strong style="color:var(--ink)">2 500 Ft</strong>. Szegeden kívül, más település esetén a kiszállási díj egyedi megállapodás tárgya.</li>
         <li>Komplexebb, elhúzódóbb kivitelezésű projektek esetén minden esetben egyedi, írásos árajánlatot adunk.</li>
         <li>Elfogadott fizetési módok: Készpénz, banki átutalás</li>
         <li>ÁFA-státusz: Alanyi adómentes</li>
@@ -101,14 +105,14 @@
 
     <h2>7. Adatok, adatmentés és adatvesztés</h2>
     <div class="highlight-box">
-        <strong style="color:white">Kérlek, ezt a pontot különösen figyelmesen olvasd el.</strong>
+        <strong style="color:var(--ink)">Kérlek, ezt a pontot különösen figyelmesen olvasd el.</strong>
         Bármilyen szervizmunka együtt járhat adatvesztés kockázatával, különösen már hibás,
         sérült vagy meghibásodás előtt álló adathordozó esetén.
     </div>
     <ul>
-        <li>A munka megkezdése előtt az adatok biztonsági mentése <strong style="color:white">az ügyfél felelőssége</strong>. Kérésre díj ellenében vállaljuk a mentést, ezt előre egyeztetjük.</li>
+        <li>A munka megkezdése előtt az adatok biztonsági mentése <strong style="color:var(--ink)">az ügyfél felelőssége</strong>. Kérésre díj ellenében vállaljuk a mentést, ezt előre egyeztetjük.</li>
         <li>Nem vállalunk felelősséget a már meghibásodott, fizikailag sérült vagy hibajelenséget mutató adathordozón tárolt adatok elvesztéséért.</li>
-        <li>Az adatmentési és adatvisszaállítási szolgáltatás <strong style="color:white">eredménykötelem nélküli</strong>: a sikeres visszaállítás nem garantálható, mert az az adathordozó fizikai állapotától függ. A sikertelen kísérletért munkadíj felszámítására kerülhet sor, amennyiben ezt előzetesen egyeztettük.</li>
+        <li>Az adatmentési és adatvisszaállítási szolgáltatás <strong style="color:var(--ink)">eredménykötelem nélküli</strong>: a sikeres visszaállítás nem garantálható, mert az az adathordozó fizikai állapotától függ. A sikertelen kísérletért munkadíj felszámítására kerülhet sor, amennyiben ezt előzetesen egyeztettük.</li>
         <li>A munka során tudomásunkra jutott adatokat, jelszavakat és fájlokat bizalmasan kezeljük, harmadik félnek nem adjuk át, és a munka befejezése után nem őrizzük meg. Részletek az <a href="privacy-policy.html">adatvédelmi tájékoztatóban</a>.</li>
     </ul>
 
