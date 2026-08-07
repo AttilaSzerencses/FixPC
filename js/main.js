@@ -15,6 +15,23 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // ── Close mobile nav on outside tap ─────────────────────
+    const navToggler = document.querySelector('.navbar-toggler');
+    const navCollapseEl = document.getElementById('navResp');
+    if (navToggler && navCollapseEl) {
+        document.addEventListener('click', (e) => {
+            const isOpen = navCollapseEl.classList.contains('show');
+            if (!isOpen) return;
+            if (navCollapseEl.contains(e.target) || navToggler.contains(e.target)) return;
+            bootstrap.Collapse.getOrCreateInstance(navCollapseEl).hide();
+        });
+        navCollapseEl.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                bootstrap.Collapse.getOrCreateInstance(navCollapseEl).hide();
+            });
+        });
+    }
+
     // ── Scroll fade-in ─────────────────────────────────────
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(el => {

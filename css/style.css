@@ -373,5 +373,6 @@ footer { background: var(--bg-darker); border-top: 1px solid var(--border); padd
     .hero-title { font-size:2.1rem; }
     .btn-out { margin-left:0; margin-top:.75rem; display:block; width:fit-content; }
     .hero-stats { gap:1.4rem; }
+    .hero-stats > div:last-child { flex:1 1 100%; }
     .lang-toggle { margin-left:0; margin-top:.5rem; }
 }
