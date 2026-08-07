@@ -62,6 +62,66 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // ── Cookie consent (gates the Google Maps embed) ────────
+    const COOKIE_KEY = 'fixpc_cookie_consent';
+    const CONSENT_MONTHS = 6;
+
+    function getConsent() {
+        try {
+            const raw = localStorage.getItem(COOKIE_KEY);
+            if (!raw) return null;
+            const data = JSON.parse(raw);
+            if (!data.expires || Date.now() > data.expires) {
+                localStorage.removeItem(COOKIE_KEY);
+                return null;
+            }
+            return data.value;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function setConsent(value) {
+        const expires = new Date();
+        expires.setMonth(expires.getMonth() + CONSENT_MONTHS);
+        localStorage.setItem(COOKIE_KEY, JSON.stringify({ value, expires: expires.getTime() }));
+    }
+
+    const cookieBanner = document.getElementById('cookieBanner');
+    const mapConsent = document.getElementById('mapConsent');
+    const mapIframe = document.getElementById('mapIframe');
+
+    function showCookieBanner() {
+        if (!cookieBanner) return;
+        requestAnimationFrame(() => cookieBanner.classList.add('is-visible'));
+    }
+    function hideCookieBanner() {
+        cookieBanner?.classList.remove('is-visible');
+    }
+    function loadMap() {
+        if (mapIframe && !mapIframe.src && mapIframe.dataset.src) mapIframe.src = mapIframe.dataset.src;
+        mapConsent?.classList.add('is-hidden');
+    }
+
+    const consent = getConsent();
+    if (consent === 'accepted') {
+        loadMap();
+    } else if (consent === null) {
+        showCookieBanner();
+    }
+    // consent === 'rejected' → banner stays closed, map placeholder stays up until reopened
+
+    document.getElementById('cookieAccept')?.addEventListener('click', () => {
+        setConsent('accepted');
+        hideCookieBanner();
+        loadMap();
+    });
+    document.getElementById('cookieReject')?.addEventListener('click', () => {
+        setConsent('rejected');
+        hideCookieBanner();
+    });
+    document.getElementById('mapConsentBtn')?.addEventListener('click', showCookieBanner);
+
     // ── Modal "contact" CTA: close the modal, then scroll to #contact ──
     const contactSection = document.getElementById('contact');
     document.querySelectorAll('.modal-contact-cta').forEach(btn => {

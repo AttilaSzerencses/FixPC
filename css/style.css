@@ -329,6 +329,17 @@ select:focus-visible, .p-card:focus-visible, [tabindex]:focus-visible {
 }
 .map-wake.is-hidden { opacity: 0; pointer-events: none; }
 
+.map-consent {
+    position:absolute; inset:0; z-index:2;
+    background: var(--bg-card);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding: 2rem; gap:.7rem;
+}
+.map-consent i { font-size:1.8rem; color: var(--accent); }
+.map-consent p { color: var(--text-muted); font-size:.9rem; max-width:320px; margin:0 0 .3rem; line-height:1.6; }
+.map-consent-address { font-family:var(--fh); font-weight:700; font-size:1rem; color:#fff; margin-bottom:.1rem !important; }
+.map-consent.is-hidden { display:none; }
+
 /* ══════════════════════════════════════════
    FOOTER
 ══════════════════════════════════════════ */
@@ -349,6 +360,30 @@ footer { background: var(--bg-darker); border-top: 1px solid var(--border); padd
     box-shadow: 0 6px 20px rgba(26,143,160,.45);
 }
 @media (min-width: 768px) { .tap-call { display: none; } }
+
+/* ══════════════════════════════════════════
+   COOKIE BANNER
+══════════════════════════════════════════ */
+.cookie-banner {
+    position: fixed; left:0; right:0; bottom:0; z-index: 1070;
+    background: rgba(7,13,19,.97);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--border);
+    padding: 1.1rem 1.4rem;
+    transform: translateY(100%); transition: transform .35s ease;
+}
+.cookie-banner.is-visible { transform: translateY(0); }
+.cookie-banner-inner {
+    max-width: 1140px; margin: 0 auto;
+    display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;
+}
+.cookie-banner p { color: var(--text-muted); font-size:.86rem; line-height:1.6; margin:0; flex:1; min-width:240px; }
+.cookie-banner-actions { display:flex; gap:.7rem; flex-shrink:0; margin-left:auto; }
+.cookie-banner .btn-main, .cookie-banner .btn-out { padding:.62rem 1.4rem; font-size:.8rem; margin:0; }
+@media (max-width:575px) {
+    .cookie-banner-actions { width:100%; margin-left:0; }
+    .cookie-banner .btn-main, .cookie-banner .btn-out { flex:1; text-align:center; }
+}
 
 /* ══════════════════════════════════════════
    FADE-IN

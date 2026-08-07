@@ -368,11 +368,18 @@
                 <div class="col-lg-7">
                     <div class="c-panel-right c-panel-map h-100">
                         <div class="map-wrap">
+                            <div class="map-consent" id="mapConsent">
+                                <i class="fas fa-map-location-dot" aria-hidden="true"></i>
+                                <p class="map-consent-address">6721 Szeged, Bocskai utca 5, Hungary</p>
+                                <p>To display the map, you must allow the use of cookies.</p>
+                                <button type="button" class="btn-main" id="mapConsentBtn">Open cookie settings</button>
+                            </div>
                             <button type="button" class="map-wake" data-map-wake aria-label="Activate map for scrolling">
                                 <i class="fas fa-location-dot" aria-hidden="true"></i>
                             </button>
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2758.6304571776454!2d20.14565387673573!3d46.25757378015459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4744880cb0ceeddf%3A0xbdc6b4c98947dcdf!2sSzeged%2C%20Bocskai%20u.%205%2C%206721!5e0!3m2!1shu!2shu!4v1785677727695!5m2!1shu!2shu"
+                                id="mapIframe"
+                                data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2758.6304571776454!2d20.14565387673573!3d46.25757378015459!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4744880cb0ceeddf%3A0xbdc6b4c98947dcdf!2sSzeged%2C%20Bocskai%20u.%205%2C%206721!5e0!3m2!1shu!2shu!4v1785677727695!5m2!1shu!2shu"
                                 title="FixPC, Bocskai utca 5, Szeged map"
                                 loading="lazy"
                                 allowfullscreen
@@ -409,6 +416,17 @@
 <a class="tap-call" href="tel:+36302327113" aria-label="Call: +36 30 232 7113">
     <i class="fas fa-phone" aria-hidden="true"></i>
 </a>
+
+<!-- ══════════════ COOKIE BANNER ══════════════ -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie consent">
+    <div class="cookie-banner-inner">
+        <p>Some features of our website use cookies to improve the user experience. To use these features, please accept the use of cookies. Details in our <a href="privacy-policy-en.html">Privacy Policy</a>.</p>
+        <div class="cookie-banner-actions">
+            <button type="button" class="btn-out" id="cookieReject">Reject</button>
+            <button type="button" class="btn-main" id="cookieAccept">Accept</button>
+        </div>
+    </div>
+</div>
 
 <!-- ══════════════ MODALS (EN) ══════════════ -->
 
