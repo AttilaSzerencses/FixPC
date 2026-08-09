@@ -56,7 +56,7 @@ select:focus-visible, .p-card:focus-visible, [tabindex]:focus-visible {
 
 .navbar-brand { display:flex; align-items:center; gap:.55rem; transform-origin: left center; transition: transform .3s; }
 .brand-mark { height: 42px; width: auto; transition: transform .3s; flex-shrink: 0; }
-.navbar-brand:hover .brand-mark { transform: rotate(-8deg) scale(1.05); }
+.navbar-brand:hover .brand-mark { transform: rotate(-3deg) scale(1.05); }
 .brand-word { font-family: var(--fh); font-weight: 700; font-size: 1.3rem; letter-spacing: .01em; line-height: 1; color: var(--text); }
 .brand-word .pc { color: var(--accent); }
 
@@ -128,9 +128,8 @@ select:focus-visible, .p-card:focus-visible, [tabindex]:focus-visible {
     letter-spacing: .04em; text-transform: uppercase;
     padding: .88rem 2.1rem; border-radius: 6px; text-decoration: none;
     display: inline-block; transition: all .25s;
-    box-shadow: 0 4px 18px rgba(26,143,160,.35);
 }
-.btn-main:hover { filter: brightness(1.15); transform: translateY(-2px); box-shadow: 0 8px 26px rgba(26,143,160,.5); color:#fff; }
+.btn-main:hover { filter: brightness(1.15); transform: translateY(-2px); color:#fff; }
 .btn-out {
     background: transparent; border: 1.5px solid var(--border);
     color: var(--text); font-family: var(--fh); font-weight: 600;
@@ -149,13 +148,11 @@ select:focus-visible, .p-card:focus-visible, [tabindex]:focus-visible {
 .hero-logo-wrap { position:relative; display:flex; align-items:center; justify-content:center; padding: 3rem 1.5rem; }
 .hero-logo-halo {
     position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-    width:340px; height:340px; max-width:100%; border-radius:50%;
-    background:radial-gradient(circle, rgba(26,143,160,.18) 0%, transparent 68%);
+    width:480px; height:220px; max-width:100%; border-radius:50%;
 }
 .hero-logo-img {
-    width: clamp(180px, 22vw, 260px);
+    width: clamp(240px, 32vw, 400px);
     position:relative; z-index:2;
-    filter: drop-shadow(0 0 32px rgba(26,143,160,.4));
     animation: float 6s ease-in-out infinite;
 }
 @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
@@ -364,7 +361,7 @@ footer { background: var(--bg-darker); border-top: 1px solid var(--border); padd
 /* ══════════════════════════════════════════
    COOKIE BANNER
 ══════════════════════════════════════════ */
-.cookie-banner {
+.consent-bar {
     position: fixed; left:0; right:0; bottom:0; z-index: 1070;
     background: rgba(7,13,19,.97);
     backdrop-filter: blur(10px);
@@ -372,17 +369,17 @@ footer { background: var(--bg-darker); border-top: 1px solid var(--border); padd
     padding: 1.1rem 1.4rem;
     transform: translateY(100%); transition: transform .35s ease;
 }
-.cookie-banner.is-visible { transform: translateY(0); }
-.cookie-banner-inner {
+.consent-bar.is-visible { transform: translateY(0); }
+.consent-bar-inner {
     max-width: 1140px; margin: 0 auto;
     display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap;
 }
-.cookie-banner p { color: var(--text-muted); font-size:.86rem; line-height:1.6; margin:0; flex:1; min-width:240px; }
-.cookie-banner-actions { display:flex; gap:.7rem; flex-shrink:0; margin-left:auto; }
-.cookie-banner .btn-main, .cookie-banner .btn-out { padding:.62rem 1.4rem; font-size:.8rem; margin:0; }
+.consent-bar p { color: var(--text-muted); font-size:.86rem; line-height:1.6; margin:0; flex:1; min-width:240px; }
+.consent-bar-actions { display:flex; gap:.7rem; flex-shrink:0; margin-left:auto; }
+.consent-bar .btn-main, .consent-bar .btn-out { padding:.62rem 1.4rem; font-size:.8rem; margin:0; }
 @media (max-width:575px) {
-    .cookie-banner-actions { width:100%; margin-left:0; }
-    .cookie-banner .btn-main, .cookie-banner .btn-out { flex:1; text-align:center; }
+    .consent-bar-actions { width:100%; margin-left:0; }
+    .consent-bar .btn-main, .consent-bar .btn-out { flex:1; text-align:center; }
 }
 
 /* ══════════════════════════════════════════

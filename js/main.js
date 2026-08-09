@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem(COOKIE_KEY, JSON.stringify({ value, expires: expires.getTime() }));
     }
 
-    const cookieBanner = document.getElementById('cookieBanner');
+    const cookieBanner = document.getElementById('consentBar');
     const mapConsent = document.getElementById('mapConsent');
     const mapIframe = document.getElementById('mapIframe');
 
@@ -111,12 +111,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     // consent === 'rejected' → banner stays closed, map placeholder stays up until reopened
 
-    document.getElementById('cookieAccept')?.addEventListener('click', () => {
+    document.getElementById('consentAccept')?.addEventListener('click', () => {
         setConsent('accepted');
         hideCookieBanner();
         loadMap();
     });
-    document.getElementById('cookieReject')?.addEventListener('click', () => {
+    document.getElementById('consentReject')?.addEventListener('click', () => {
         setConsent('rejected');
         hideCookieBanner();
     });

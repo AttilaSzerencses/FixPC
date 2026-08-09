@@ -1,20 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 244 76" role="img" aria-label="FixPC">
-  <rect x="3" y="3" width="70" height="58" fill="none" stroke="#FFFFFF" stroke-width="6"></rect>
-  <rect x="16" y="67" width="44" height="8" fill="#17ADC9"></rect>
-  <rect x="21" y="16" width="12" height="32" fill="#FFFFFF"></rect>
-  <rect x="21" y="16" width="34" height="10" fill="#FFFFFF"></rect>
-  <rect x="21" y="31" width="24" height="9" fill="#17ADC9"></rect>
+  <rect x="4" y="4" width="68" height="56" rx="14" fill="none" stroke="#ffffff" stroke-width="6"></rect>
+  <rect x="17" y="65" width="42" height="8" rx="4" fill="#17ADC9"></rect>
+  <path d="M25 16 H51 A4 4 0 0 1 55 20 V22 A4 4 0 0 1 51 26 H32 V46 A4 4 0 0 1 28 50 H25 A4 4 0 0 1 21 46 V20 A4 4 0 0 1 25 16 Z" fill="#ffffff"></path>
+  <path d="M21 30 H47 A5 5 0 0 1 47 40 H21 Z" fill="#17ADC9"></path>
   <g transform="translate(96,0)">
-  <g fill="#FFFFFF">
+  <g fill="#ffffff">
     <path d="M0 11H22V19H8V26H17V34H8V53H0Z"></path>
     <path d="M26 11H34V19H26Z"></path>
     <path d="M26 24H34V53H26Z"></path>
     <path d="M40 24H49L62 53H53Z"></path>
     <path d="M53 24H62L49 53H40Z"></path>
   </g>
-  <g fill="#17ADC9">
-    <path d="M70 11H78V53H70Z"></path>
-  </g>
+  <path d="M70 11H78V53H70Z" fill="#17ADC9"></path>
   <path d="M74 15H86A11 11 0 0 1 86 37H74" fill="none" stroke="#17ADC9" stroke-width="8"></path>
   <path d="M139 21A17 17 0 1 0 139 43" fill="none" stroke="#17ADC9" stroke-width="8"></path>
   </g>
