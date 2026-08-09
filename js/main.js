@@ -103,6 +103,12 @@ document.addEventListener('DOMContentLoaded', function () {
         mapConsent?.classList.add('is-hidden');
     }
 
+    function acceptConsent() {
+        setConsent('accepted');
+        hideCookieBanner();
+        loadMap();
+    }
+
     const consent = getConsent();
     if (consent === 'accepted') {
         loadMap();
@@ -111,16 +117,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     // consent === 'rejected' → banner stays closed, map placeholder stays up until reopened
 
-    document.getElementById('consentAccept')?.addEventListener('click', () => {
-        setConsent('accepted');
-        hideCookieBanner();
-        loadMap();
-    });
+    document.getElementById('consentAccept')?.addEventListener('click', acceptConsent);
     document.getElementById('consentReject')?.addEventListener('click', () => {
         setConsent('rejected');
         hideCookieBanner();
     });
     document.getElementById('mapConsentBtn')?.addEventListener('click', showCookieBanner);
+    // Kozvetlen elfogadas gomb a placeholderben - a lebego consent bar-t
+    // egyes bongeszo-kiegeszitok (pl. Brave Shields) elrejthetik, ez a gomb
+    // fuggetlenul mukodik attol.
+    document.getElementById('mapConsentAcceptBtn')?.addEventListener('click', acceptConsent);
 
     // ── Modal "contact" CTA: close the modal, then scroll to #contact ──
     const contactSection = document.getElementById('contact');

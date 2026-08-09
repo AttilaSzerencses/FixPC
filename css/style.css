@@ -336,6 +336,7 @@ select:focus-visible, .p-card:focus-visible, [tabindex]:focus-visible {
 .map-consent p { color: var(--text-muted); font-size:.9rem; max-width:320px; margin:0 0 .3rem; line-height:1.6; }
 .map-consent-address { font-family:var(--fh); font-weight:700; font-size:1rem; color:#fff; margin-bottom:.1rem !important; }
 .map-consent.is-hidden { display:none; }
+.map-consent .btn-out { margin-left:0; }
 
 /* ══════════════════════════════════════════
    FOOTER
