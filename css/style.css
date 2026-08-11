@@ -141,6 +141,8 @@ select:focus-visible, .p-card:focus-visible, [tabindex]:focus-visible {
 
 .hero-stats { display:flex; gap:1.6rem; flex-wrap:wrap; margin-top:2.6rem; padding-top:1.8rem; border-top:1px solid var(--border); }
 .hero-stats > div { text-align:center; }
+.hero-stat-link { text-align:center; display:block; text-decoration:none; color:inherit; transition:opacity .2s; }
+.hero-stat-link:hover, .hero-stat-link:focus-visible { opacity:.75; }
 .stat-num { font-family:var(--fh); font-weight:800; font-size:1.9rem; color:var(--accent); line-height:1; }
 .stat-num .stat-unit { font-size:.55em; font-weight:700; }
 .stat-lbl { font-size:.72rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:.04em; margin-top:.3rem; }
@@ -409,3 +411,26 @@ footer { background: var(--bg-darker); border-top: 1px solid var(--border); padd
     .hero-stats > div:last-child { flex:1 1 100%; }
     .lang-toggle { margin-left:0; margin-top:.5rem; }
 }
+
+/* ══════════════════════════════════════════
+   404 OLDAL
+══════════════════════════════════════════ */
+.error-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8.5rem 1.5rem 5rem;
+    text-align: center;
+    background: radial-gradient(ellipse 900px 500px at 80% 0%, rgba(26,143,160,.14), transparent 65%), var(--bg-dark);
+}
+.error-page .container { max-width: 640px; }
+.error-code {
+    font-family: var(--fh); font-weight: 800; font-size: clamp(4rem,12vw,7rem);
+    line-height: 1; color: var(--accent); margin-bottom: .5rem;
+}
+.error-title {
+    font-family: var(--fh); font-weight: 800; font-size: clamp(1.5rem,3.5vw,2.2rem);
+    color: #fff; margin-bottom: 1rem;
+}
+.error-text { color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: .6rem; }
+.error-text-en { color: var(--text-muted); font-size: .92rem; line-height: 1.6; margin-bottom: 2.2rem; }
